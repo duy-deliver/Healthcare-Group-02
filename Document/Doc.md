@@ -1,1 +1,0 @@
-- Document include : Design Pattern / Architectural..
