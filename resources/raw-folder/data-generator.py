@@ -17,7 +17,7 @@ def create_csv_file_Insurance():
     with open(f'{raw_path}\Insurance-{time_stampe}.csv', 'w', newline='') as csvfile:
         fieldnames = ['Insurance_ID', 'Insurance_Cover_Amount', 'Insurance_Type', 'Insurance_Expired']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        RECORD_COUNT = 3001
+        RECORD_COUNT = 3000
         writer.writeheader()
         Insurance = []
         TypeInsu = []
@@ -57,7 +57,7 @@ def create_csv_file_Patient():
             writer.writerow(
                 {
                     'Patient_ID': 'P' + str(i+1),
-                    'Insurance_ID': 'P' + str(i+2000),
+                    'Insurance_ID': 'I' + str(i+2000),
                     'Patient_Name': fake.name(),
                     'Patient_Gender': random.choice(['Male', 'Female']),
                     'Patient_Age': fake.random_int(20,80),
@@ -103,8 +103,8 @@ Symptom =[ 'Chest pain or pressure', 'Irregular heart rhythm', 'Shortness of bre
 ,'Swelling in the feet and ankles','Coughing-up blood','Rapid heart rate','Choking','Abdominal swelling','Back pain','Pain near the right shoulder blade'
 ,'Easy bruising or bleeding' ,'Not having an appetite' ,'Pale bowel movements or dark urine'
 ,'An open sore that bleeds','Crusts and remains open for several weeks'
-,'A reddish, raised patch','A pink growth with an elevated border'
-,'crusted central indentation','A scar-like, white, yellow, or waxy area','Swollen Lymph Nodes'
+,'A reddish raised patch','A pink growth with an elevated border'
+,'crusted central indentation','A scar-like white yellow or waxy area','Swollen Lymph Nodes'
 ,'Chills and Unexpected Body Temperature Changes'
 ,'Running a High Fever','Heavy Sweating During the Night'
 ,'Itchy Skin','Altered Skin','A cough for more than 2 or 3 weeks'
