@@ -51,7 +51,7 @@ def create_csv_file_Patient():
                       'Patient_Bloodtype','Patient_Weight_kg','History_Covid','Blood_Pressure_mmHG','Blood_Sugar_mgdL',
                       'Patient_Zip','Patient_State']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        RECORD_COUNT = 1000
+        RECORD_COUNT = 1001
         writer.writeheader()
         for i in range(RECORD_COUNT):
             Patient_ID.append('P' + str(i+1))
@@ -87,15 +87,15 @@ def create_csv_file_Disease():
     with open(f'{raw_path}\Disease-{time_stampe}.csv', 'w', newline='') as csvfile:
         fieldnames = ['Disease_ID','Disease_Name','Blood_Pressure_mmHg','Blood_Sugar_mgdL']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        RECORD_COUNT = 5
+        RECORD_COUNT = 6
         writer.writeheader()
         for i in range(RECORD_COUNT):
             writer.writerow(
                 {
-                    'Disease_ID': 'D' + str(i),
-                    'Disease_Name': Disease_name[i],
-                    'Blood_Pressure_mmHg': Blood_Pressure_mmHg[i],
-                    'Blood_Sugar_mgdL': Blood_Sugar_mgdL[i]
+                    'Disease_ID': 'D' + str(i+1),
+                    'Disease_Name': Disease_name[i-1],
+                    'Blood_Pressure_mmHg': Blood_Pressure_mmHg[i-1],
+                    'Blood_Sugar_mgdL': Blood_Sugar_mgdL[i-1]
 
                 }
             )
@@ -161,12 +161,12 @@ def create_csv_file_Medical():
         fieldnames = ['Medical_ID','Patient_ID','Appointment_Date','Spouse_Name','Spouse_Phone','Spouse_Occupation',
                       'Social_Security_Last_4','Surgery_Status']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        RECORD_COUNT =5000
+        RECORD_COUNT =5001
         writer.writeheader()
         for i in range(RECORD_COUNT):
             writer.writerow(
                 {
-                    'Medical_ID': 'M' + str(i),
+                    'Medical_ID': 'M' + str(i+1),
                     'Patient_ID': random.choice(Patient_ID),
                     'Appointment_Date': fake.date_between_dates(date_start=datetime(2019,1,1), date_end=datetime(2021,8,9)),
                     'Spouse_Name': fake.name(),
@@ -184,12 +184,12 @@ def create_csv_file_MedicalDetail():
     with open(f'{raw_path}\MedicalDetail-{time_stampe}.csv', 'w', newline='') as csvfile:
         fieldnames = ['Medical_ID','Symptom_ID','Doctor_Name','Allergies','Work_Phone']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        RECORD_COUNT =5000
+        RECORD_COUNT =5001
         writer.writeheader()
         for i in range(RECORD_COUNT):
             writer.writerow(
                 {
-                    'Medical_ID': 'M' + str(i),
+                    'Medical_ID': 'M' + str(i+1),
                     'Symptom_ID': random.choice(Symptom_ID),
                     'Doctor_Name': fake.name(),
                     'Allergies': random.choice([0,1]),
