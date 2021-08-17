@@ -1,0 +1,2977 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/14/2021 12:19:08 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LONCI57"
+  DTS:CreatorName="DESKTOP-LONCI57\Admin"
+  DTS:DTSID="{9B32C384-A7DC-4394-91C0-7C8DAE58C33B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{4073E92C-A0E0-4AB2-9F1B-83A53929B3C9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{134A27D5-1864-493D-87C0-39B1CA368458}"
+      DTS:ObjectName="DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LONCI57\SQLEXPRESS;Initial Catalog=Pipeline_Group02;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DIAGNOSIS_GROUP02]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{F37E1956-C726-493E-9F49-69F8CC83E9A1}"
+      DTS:ObjectName="DIAGNOSIS_GROUP02">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=DIAGNOSIS_GROUP02;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[s1.hank0720]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{BA906490-6861-402E-860D-A99FF486DDFF}"
+      DTS:ObjectName="s1.hank0720">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="uid=hank0720;Dsn=s1;">
+          <DTS:Password
+            DTS:Name="pwd"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXXRDRj3j3Eyim/gdkIvGZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACee0rpEVSHm3vq2Ur9R0J2GXA+4xfUm+p+fXDOvXAUpgAAAAAOgAAAAAIAACAAAAAo4a8GKRcNG0udjppl3kIy7FERp1pLgiJI3LK+djtkgiAAAAAiSGkBj5afsgl4ZQJV1ULPFPqZCDARknTQy+bHl7t0t0AAAABIvEZlhN3lL7z9khNebvxr205fczSjGZUkTFlRGhTR9VlZLxYrfEnIIrE25SWF70m1s5xPllL0Mz63vrr0hqmB</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Delete before Loading to Snow"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{DDEE2B3A-CF05-49EF-8597-306C24C9611F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete before Loading to Snow"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BA906490-6861-402E-860D-A99FF486DDFF}"
+          SQLTask:SqlStatementSource="DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Disease;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Patient;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Symptom;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Insurance;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Medical;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_MedicalDetail;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3B6B3F7D-5159-4D79-B7BA-698056ADFA5E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Disease"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{29BEDD11-73D7-49C8-A1D5-8419CA5D61FF}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Disease"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Disease\Disease SQL"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Disease SQL"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_Disease]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Disease\Disease SQL.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Disease_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].ExternalColumns[Disease_iD]"
+                          length="2"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Disease_iD]"
+                          name="Disease_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Disease_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].ExternalColumns[Disease_name]"
+                          length="20"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Disease_name]"
+                          name="Disease_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Blood_pressure_mmHg]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].ExternalColumns[Blood_pressure_mmHg]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Blood_pressure_mmHg]"
+                          name="Blood_pressure_mmHg"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Blood_sugar_mgdL]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].ExternalColumns[Blood_sugar_mgdL]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Blood_sugar_mgdL]"
+                          name="Blood_sugar_mgdL"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].ExternalColumns[Disease_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="Disease_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].ExternalColumns[Disease_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Disease_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].ExternalColumns[Blood_pressure_mmHg]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Blood_pressure_mmHg" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].ExternalColumns[Blood_sugar_mgdL]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Blood_sugar_mgdL" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[Disease_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[Disease_iD]"
+                          name="Disease_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[Disease_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[Disease_name]"
+                          name="Disease_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[Blood_pressure_mmHg]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[Blood_pressure_mmHg]"
+                          name="Blood_pressure_mmHg" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[Blood_sugar_mgdL]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[Blood_sugar_mgdL]"
+                          name="Blood_sugar_mgdL" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Disease\to Disease SnowFlake"
+                  componentClassID="Microsoft.SSISODBCDst"
+                  contactInfo="ODBC Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="ODBC Destination"
+                  name="to Disease SnowFlake"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The name of the table to be fetched."
+                      expressionType="Notify"
+                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_DISEASE"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows fetched per batch."
+                      expressionType="Notify"
+                      name="BatchSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of rows inserted under the same transaction."
+                      expressionType="Notify"
+                      name="TransactionSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines the chunk size allocation for LOB columns"
+                      expressionType="Notify"
+                      name="LobChunkSize">32768</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                      expressionType="Notify"
+                      name="StatementTimeout">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The code page to use when code page information is unavailable from the data source."
+                      expressionType="Notify"
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The method used for inserting data. Possible values are 'Batch' or 'Row by row'."
+                      expressionType="Notify"
+                      name="InsertMethod">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The ODBC C data type for binding numeric data."
+                      expressionType="Notify"
+                      name="BindNumericAs">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                      expressionType="Notify"
+                      name="BindCharColumnsAs">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Disease\to Disease SnowFlake.Connections[ODBCConnection]"
+                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      description="The ODBC runtime connection used to access the database."
+                      name="ODBCConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ODBC Destination Input"
+                      truncationRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].Columns[Disease_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="Disease_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[DISEASE_ID]"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Disease_iD]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].Columns[Disease_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Disease_name"
+                          externalMetadataColumnId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[DISEASE_NAME]"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Disease_name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].Columns[Blood_pressure_mmHg]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Blood_pressure_mmHg"
+                          externalMetadataColumnId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[BLOOD_PRESSURE_MMHG]"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Blood_pressure_mmHg]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].Columns[Blood_sugar_mgdL]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Blood_sugar_mgdL"
+                          externalMetadataColumnId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[BLOOD_SUGAR_MGDL]"
+                          lineageId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output].Columns[Blood_sugar_mgdL]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[DISEASE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="DISEASE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[DISEASE_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="DISEASE_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[BLOOD_PRESSURE_MMHG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="BLOOD_PRESSURE_MMHG" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[BLOOD_SUGAR_MGDL]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="BLOOD_SUGAR_MGDL" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Disease\to Disease SnowFlake.Outputs[ODBC Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ODBC Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Disease\to Disease SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Disease\to Disease SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Disease\to Disease SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Disease.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Disease\to Disease SnowFlake.Inputs[ODBC Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Disease\Disease SQL.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Insurance"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{8e6e1a0b-deac-46e4-9d3d-d9836a346ca0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insurance"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Insurance\Insurance SQL"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Insurance SQL"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_Insurance]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Insurance\Insurance SQL.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_iD]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_iD]"
+                          name="Insurance_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_cover_amount]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_cover_amount]"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_cover_amount]"
+                          name="Insurance_cover_amount"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_type]"
+                          length="3"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_type]"
+                          name="Insurance_type"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_expired]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_expired]"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_expired]"
+                          name="Insurance_expired"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Insurance_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_cover_amount]"
+                          dataType="i4"
+                          name="Insurance_cover_amount" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="Insurance_type" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_expired]"
+                          dataType="dbTimeStamp"
+                          name="Insurance_expired" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_iD]"
+                          name="Insurance_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_cover_amount]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_cover_amount]"
+                          name="Insurance_cover_amount" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_type]"
+                          name="Insurance_type" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_expired]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_expired]"
+                          name="Insurance_expired" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Insurance\to Insurance SnowFlake"
+                  componentClassID="Microsoft.SSISODBCDst"
+                  contactInfo="ODBC Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="ODBC Destination"
+                  name="to Insurance SnowFlake"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The name of the table to be fetched."
+                      expressionType="Notify"
+                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_INSURANCE"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows fetched per batch."
+                      expressionType="Notify"
+                      name="BatchSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of rows inserted under the same transaction."
+                      expressionType="Notify"
+                      name="TransactionSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines the chunk size allocation for LOB columns"
+                      expressionType="Notify"
+                      name="LobChunkSize">32768</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                      expressionType="Notify"
+                      name="StatementTimeout">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The code page to use when code page information is unavailable from the data source."
+                      expressionType="Notify"
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The method used for inserting data. Possible values are 'Batch' or 'Row by row'."
+                      expressionType="Notify"
+                      name="InsertMethod">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The ODBC C data type for binding numeric data."
+                      expressionType="Notify"
+                      name="BindNumericAs">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                      expressionType="Notify"
+                      name="BindCharColumnsAs">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Connections[ODBCConnection]"
+                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      description="The ODBC runtime connection used to access the database."
+                      name="ODBCConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ODBC Destination Input"
+                      truncationRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].Columns[Insurance_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Insurance_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_ID]"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_iD]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].Columns[Insurance_cover_amount]"
+                          cachedDataType="i4"
+                          cachedName="Insurance_cover_amount"
+                          externalMetadataColumnId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_COVER_AMOUNT]"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_cover_amount]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].Columns[Insurance_type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="Insurance_type"
+                          externalMetadataColumnId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_TYPE]"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_type]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].Columns[Insurance_expired]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Insurance_expired"
+                          externalMetadataColumnId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_EXPIRED]"
+                          lineageId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output].Columns[Insurance_expired]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="INSURANCE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_COVER_AMOUNT]"
+                          dataType="numeric"
+                          name="INSURANCE_COVER_AMOUNT"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="INSURANCE_TYPE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_EXPIRED]"
+                          dataType="dbTimeStamp2"
+                          name="INSURANCE_EXPIRED"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Outputs[ODBC Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ODBC Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Insurance.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Inputs[ODBC Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Insurance\Insurance SQL.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Medical"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{077316be-cedd-4d23-acfe-c51b0cf51146}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Medical"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Medical\Medical SQL"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Medical SQL"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_Medical]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Medical\Medical SQL.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].Columns[Medical_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Medical_iD]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].Columns[Medical_iD]"
+                          name="Medical_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].Columns[Patient_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_iD]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].Columns[Patient_iD]"
+                          name="Patient_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].Columns[Appointment_date]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Appointment_date]"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].Columns[Appointment_date]"
+                          name="Appointment_date"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Medical_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Medical_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Patient_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Appointment_date]"
+                          dataType="dbTimeStamp"
+                          name="Appointment_date" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Medical_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Medical_iD]"
+                          name="Medical_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Patient_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Patient_iD]"
+                          name="Patient_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Appointment_date]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Appointment_date]"
+                          name="Appointment_date" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Medical\to Medical SnowFlake"
+                  componentClassID="Microsoft.SSISODBCDst"
+                  contactInfo="ODBC Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="ODBC Destination"
+                  name="to Medical SnowFlake"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The name of the table to be fetched."
+                      expressionType="Notify"
+                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_MEDICAL"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows fetched per batch."
+                      expressionType="Notify"
+                      name="BatchSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of rows inserted under the same transaction."
+                      expressionType="Notify"
+                      name="TransactionSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines the chunk size allocation for LOB columns"
+                      expressionType="Notify"
+                      name="LobChunkSize">32768</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                      expressionType="Notify"
+                      name="StatementTimeout">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The code page to use when code page information is unavailable from the data source."
+                      expressionType="Notify"
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The method used for inserting data. Possible values are 'Batch' or 'Row by row'."
+                      expressionType="Notify"
+                      name="InsertMethod">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The ODBC C data type for binding numeric data."
+                      expressionType="Notify"
+                      name="BindNumericAs">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                      expressionType="Notify"
+                      name="BindCharColumnsAs">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Medical\to Medical SnowFlake.Connections[ODBCConnection]"
+                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      description="The ODBC runtime connection used to access the database."
+                      name="ODBCConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ODBC Destination Input"
+                      truncationRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input].Columns[Medical_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Medical_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[MEDICAL_ID]"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].Columns[Medical_iD]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input].Columns[Patient_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Patient_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_ID]"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].Columns[Patient_iD]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input].Columns[Appointment_date]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Appointment_date"
+                          externalMetadataColumnId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[APPOINTMENT_DATE]"
+                          lineageId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output].Columns[Appointment_date]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[MEDICAL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="MEDICAL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="PATIENT_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[APPOINTMENT_DATE]"
+                          dataType="dbTimeStamp2"
+                          name="APPOINTMENT_DATE"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Medical\to Medical SnowFlake.Outputs[ODBC Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ODBC Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\to Medical SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Medical\to Medical SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical\to Medical SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Medical\to Medical SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Medical.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Medical\to Medical SnowFlake.Inputs[ODBC Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Medical\Medical SQL.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Medical Detail"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{9beb1ce6-5373-4dcf-b25e-7f156f77d30e}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Medical Detail"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Medical Detail\Medical SQL"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Medical SQL"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_MedicalDetail]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Medical Detail\Medical SQL.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Medical_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Medical_iD]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Medical_iD]"
+                          name="Medical_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Symptom_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Symptom_iD]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Symptom_iD]"
+                          name="Symptom_iD"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Medical_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Medical_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Symptom_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Symptom_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Allergies_flag]"
+                          dataType="i4"
+                          name="Allergies_flag" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Medical_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Medical_iD]"
+                          name="Medical_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Symptom_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Symptom_iD]"
+                          name="Symptom_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake"
+                  componentClassID="Microsoft.SSISODBCDst"
+                  contactInfo="ODBC Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="ODBC Destination"
+                  name="to Medical SnowFlake"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The name of the table to be fetched."
+                      expressionType="Notify"
+                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_MEDICALDETAIL"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows fetched per batch."
+                      expressionType="Notify"
+                      name="BatchSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of rows inserted under the same transaction."
+                      expressionType="Notify"
+                      name="TransactionSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines the chunk size allocation for LOB columns"
+                      expressionType="Notify"
+                      name="LobChunkSize">32768</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                      expressionType="Notify"
+                      name="StatementTimeout">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The code page to use when code page information is unavailable from the data source."
+                      expressionType="Notify"
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The method used for inserting data. Possible values are 'Batch' or 'Row by row'."
+                      expressionType="Notify"
+                      name="InsertMethod">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The ODBC C data type for binding numeric data."
+                      expressionType="Notify"
+                      name="BindNumericAs">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                      expressionType="Notify"
+                      name="BindCharColumnsAs">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Connections[ODBCConnection]"
+                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      description="The ODBC runtime connection used to access the database."
+                      name="ODBCConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ODBC Destination Input"
+                      truncationRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].Columns[Medical_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Medical_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[MEDICAL_ID]"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Medical_iD]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].Columns[Symptom_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Symptom_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_ID]"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Symptom_iD]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[MEDICAL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="MEDICAL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SYMPTOM_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[DOCTOR_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DOCTOR_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[ALLERGIES]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ALLERGIES" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[WORK_PHONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="WORK_PHONE" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Outputs[ODBC Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ODBC Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Medical Detail.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Patient"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{d8f72d73-26a0-4c79-adf9-805f5765476e}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Patient"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Patient\Patient SQL"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Patient SQL"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_Patient]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Patient\Patient SQL.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Blood_sugar_mgdL]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Blood_sugar_mgdL]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Blood_sugar_mgdL]"
+                          name="Blood_sugar_mgdL"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_iD]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_iD]"
+                          name="Patient_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Insurance_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_iD]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Insurance_iD]"
+                          name="Insurance_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_name]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_name]"
+                          name="Patient_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_gender]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_gender]"
+                          length="6"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_gender]"
+                          name="Patient_gender"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_age]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_age]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_age]"
+                          name="Patient_age"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_bloodtype]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_bloodtype]"
+                          length="2"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_bloodtype]"
+                          name="Patient_bloodtype"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_weight_kg]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_weight_kg]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_weight_kg]"
+                          name="Patient_weight_kg"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[History_covid]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[History_covid]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[History_covid]"
+                          name="History_covid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Blood_pressure_mmHG]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Blood_pressure_mmHG]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Blood_pressure_mmHG]"
+                          name="Blood_pressure_mmHG"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_zip]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_zip]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_zip]"
+                          name="Patient_zip"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_state]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_state]"
+                          length="30"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_state]"
+                          name="Patient_state"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Blood_sugar_mgdL]"
+                          dataType="i4"
+                          name="Blood_sugar_mgdL" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Patient_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Insurance_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Insurance_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Patient_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="Patient_gender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_age]"
+                          dataType="i4"
+                          name="Patient_age" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_bloodtype]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="Patient_bloodtype" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_weight_kg]"
+                          dataType="i4"
+                          name="Patient_weight_kg" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[History_covid]"
+                          dataType="i4"
+                          name="History_covid" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Blood_pressure_mmHG]"
+                          dataType="i4"
+                          name="Blood_pressure_mmHG" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_zip]"
+                          dataType="i4"
+                          name="Patient_zip" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].ExternalColumns[Patient_state]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Patient_state" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_iD]"
+                          name="Patient_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Insurance_iD]"
+                          name="Insurance_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_name]"
+                          name="Patient_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_gender]"
+                          name="Patient_gender" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_age]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_age]"
+                          name="Patient_age" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_bloodtype]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_bloodtype]"
+                          name="Patient_bloodtype" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_weight_kg]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_weight_kg]"
+                          name="Patient_weight_kg" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[History_covid]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[History_covid]"
+                          name="History_covid" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Blood_pressure_mmHG]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Blood_pressure_mmHG]"
+                          name="Blood_pressure_mmHG" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Blood_sugar_mgdL]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Blood_sugar_mgdL]"
+                          name="Blood_sugar_mgdL" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_zip]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_zip]"
+                          name="Patient_zip" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_state]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[Patient_state]"
+                          name="Patient_state" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Patient\to Patient SnowFlake"
+                  componentClassID="Microsoft.SSISODBCDst"
+                  contactInfo="ODBC Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="ODBC Destination"
+                  name="to Patient SnowFlake"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The name of the table to be fetched."
+                      expressionType="Notify"
+                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_PATIENT"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows fetched per batch."
+                      expressionType="Notify"
+                      name="BatchSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of rows inserted under the same transaction."
+                      expressionType="Notify"
+                      name="TransactionSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines the chunk size allocation for LOB columns"
+                      expressionType="Notify"
+                      name="LobChunkSize">32768</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                      expressionType="Notify"
+                      name="StatementTimeout">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The code page to use when code page information is unavailable from the data source."
+                      expressionType="Notify"
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The method used for inserting data. Possible values are 'Batch' or 'Row by row'."
+                      expressionType="Notify"
+                      name="InsertMethod">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The ODBC C data type for binding numeric data."
+                      expressionType="Notify"
+                      name="BindNumericAs">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                      expressionType="Notify"
+                      name="BindCharColumnsAs">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Patient\to Patient SnowFlake.Connections[ODBCConnection]"
+                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      description="The ODBC runtime connection used to access the database."
+                      name="ODBCConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ODBC Destination Input"
+                      truncationRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Blood_pressure_mmHG]"
+                          cachedDataType="i4"
+                          cachedName="Blood_pressure_mmHG"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[BLOOD_PRESSURE_MMHG]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Blood_pressure_mmHG]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Blood_sugar_mgdL]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Blood_sugar_mgdL"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[BLOOD_SUGAR_MGDL]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Blood_sugar_mgdL]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Patient_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Patient_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_ID]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_iD]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Insurance_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Insurance_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_ID]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Insurance_iD]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Patient_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Patient_name"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_NAME]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Patient_gender]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="Patient_gender"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_GENDER]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_gender]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Patient_age]"
+                          cachedDataType="i4"
+                          cachedName="Patient_age"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_AGE]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_age]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Patient_bloodtype]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="Patient_bloodtype"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_BLOODTYPE]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_bloodtype]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Patient_weight_kg]"
+                          cachedDataType="i4"
+                          cachedName="Patient_weight_kg"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_WEIGHT_KG]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_weight_kg]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[History_covid]"
+                          cachedDataType="i4"
+                          cachedName="History_covid"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[HISTORY_COVID]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[History_covid]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Patient_zip]"
+                          cachedDataType="i4"
+                          cachedName="Patient_zip"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_ZIP]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_zip]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].Columns[Patient_state]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Patient_state"
+                          externalMetadataColumnId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_STATE]"
+                          lineageId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output].Columns[Patient_state]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[BLOOD_PRESSURE_MMHG]"
+                          dataType="numeric"
+                          name="BLOOD_PRESSURE_MMHG"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[BLOOD_SUGAR_MGDL]"
+                          dataType="numeric"
+                          name="BLOOD_SUGAR_MGDL"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="PATIENT_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[INSURANCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="INSURANCE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PATIENT_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_GENDER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="6"
+                          name="PATIENT_GENDER" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_AGE]"
+                          dataType="numeric"
+                          name="PATIENT_AGE"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_BLOODTYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="PATIENT_BLOODTYPE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_WEIGHT_KG]"
+                          dataType="numeric"
+                          name="PATIENT_WEIGHT_KG"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[HISTORY_COVID]"
+                          dataType="numeric"
+                          name="HISTORY_COVID"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_ZIP]"
+                          dataType="numeric"
+                          name="PATIENT_ZIP"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[PATIENT_STATE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="PATIENT_STATE" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Patient\to Patient SnowFlake.Outputs[ODBC Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ODBC Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\to Patient SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Patient\to Patient SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Patient\to Patient SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Patient.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Patient\to Patient SnowFlake.Inputs[ODBC Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Patient\Patient SQL.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Symptom"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{293e9994-573c-45d3-a6de-8ad23934ce01}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Symptom"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Symptom\Symptom SQL"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Symptom SQL"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Dim_Symptom]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Symptom\Symptom SQL.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Symptom_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].ExternalColumns[Symptom_iD]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Symptom_iD]"
+                          name="Symptom_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Disease_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].ExternalColumns[Disease_iD]"
+                          length="2"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Disease_iD]"
+                          name="Disease_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Symptom_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].ExternalColumns[Symptom_name]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Symptom_name]"
+                          name="Symptom_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Symptom_stage]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].ExternalColumns[Symptom_stage]"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Symptom_stage]"
+                          name="Symptom_stage"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].ExternalColumns[Symptom_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Symptom_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].ExternalColumns[Disease_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="Disease_iD" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].ExternalColumns[Symptom_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Symptom_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].ExternalColumns[Symptom_stage]"
+                          dataType="i4"
+                          name="Symptom_stage" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[Symptom_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[Symptom_iD]"
+                          name="Symptom_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[Disease_iD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[Disease_iD]"
+                          name="Disease_iD" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[Symptom_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[Symptom_name]"
+                          name="Symptom_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[Symptom_stage]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[Symptom_stage]"
+                          name="Symptom_stage" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Symptom\to Symptom SnowFlake"
+                  componentClassID="Microsoft.SSISODBCDst"
+                  contactInfo="ODBC Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="ODBC Destination"
+                  name="to Symptom SnowFlake"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The name of the table to be fetched."
+                      expressionType="Notify"
+                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_SYMPTOM"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows fetched per batch."
+                      expressionType="Notify"
+                      name="BatchSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of rows inserted under the same transaction."
+                      expressionType="Notify"
+                      name="TransactionSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines the chunk size allocation for LOB columns"
+                      expressionType="Notify"
+                      name="LobChunkSize">32768</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                      expressionType="Notify"
+                      name="StatementTimeout">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The code page to use when code page information is unavailable from the data source."
+                      expressionType="Notify"
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The method used for inserting data. Possible values are 'Batch' or 'Row by row'."
+                      expressionType="Notify"
+                      name="InsertMethod">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The ODBC C data type for binding numeric data."
+                      expressionType="Notify"
+                      name="BindNumericAs">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                      expressionType="Notify"
+                      name="BindCharColumnsAs">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Connections[ODBCConnection]"
+                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      description="The ODBC runtime connection used to access the database."
+                      name="ODBCConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ODBC Destination Input"
+                      truncationRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].Columns[Symptom_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Symptom_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_ID]"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Symptom_iD]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].Columns[Disease_iD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="Disease_iD"
+                          externalMetadataColumnId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[DISEASE_ID]"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Disease_iD]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].Columns[Symptom_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Symptom_name"
+                          externalMetadataColumnId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_NAME]"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Symptom_name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].Columns[Symptom_stage]"
+                          cachedDataType="i4"
+                          cachedName="Symptom_stage"
+                          externalMetadataColumnId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_STAGE]"
+                          lineageId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output].Columns[Symptom_stage]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="SYMPTOM_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[DISEASE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="DISEASE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SYMPTOM_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_STAGE]"
+                          dataType="numeric"
+                          name="SYMPTOM_STAGE"
+                          precision="38" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Outputs[ODBC Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ODBC Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Symptom.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Inputs[ODBC Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\Symptom\Symptom SQL.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C04B266F-96CF-4919-AC25-C29019E2A81B}"
+      DTS:From="Package\Delete before Loading to Snow"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Sequence Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Delete before Loading to Snow"
+          TopLeft="97,79.6249996044983" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\Sequence Container\Disease"
+          TopLeft="7,12.4166655743288" />
+        <NodeLayout
+          Size="112,42"
+          Id="Package\Sequence Container\Patient"
+          TopLeft="150,12.8333321495188" />
+        <NodeLayout
+          Size="123.5,42"
+          Id="Package\Sequence Container\Symptom"
+          TopLeft="287,15.4166659294731" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Sequence Container\Insurance"
+          TopLeft="10,91.0833324239485" />
+        <NodeLayout
+          Size="115.5,42"
+          Id="Package\Sequence Container\Medical"
+          TopLeft="147,93.6666658487585" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Sequence Container\Medical Detail"
+          TopLeft="293,96.9166658326155" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="465.5,210.5"
+          Size="465.5,253.5"
+          Id="Package\Sequence Container"
+          TopLeft="103,198.791665679258" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="208.5,121.624999604498">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.25,77.1666660747597"
+              Start="0,0"
+              End="127.25,69.6666660747597">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5833330373799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5833330373799"
+                    Point2="0,38.5833330373799"
+                    Point3="4,38.5833330373799" />
+                  <mssgle:LineSegment
+                    End="123.25,38.5833330373799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.25,38.5833330373799"
+                    Point2="127.25,38.5833330373799"
+                    Point3="127.25,42.5833330373799" />
+                  <mssgle:LineSegment
+                    End="127.25,69.6666660747597" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Disease">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Sequence Container\Disease\Disease SQL"
+          TopLeft="146.5,90.9999995479981" />
+        <NodeLayout
+          Size="183.5,42"
+          Id="Package\Sequence Container\Disease\to Disease SnowFlake"
+          TopLeft="386.5,131.083332682235" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Disease.Paths[OLE DB Source Output]"
+          TopLeft="287.5,111.999999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99,40.0833331342373"
+              Start="0,0"
+              End="91.5,40.0833331342373">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5,0"
+                    Point2="49.5,0"
+                    Point3="49.5,4" />
+                  <mssgle:LineSegment
+                    End="49.5,36.0833331342373" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.5,36.0833331342373"
+                    Point2="49.5,40.0833331342373"
+                    Point3="53.5,40.0833331342373" />
+                  <mssgle:LineSegment
+                    End="91.5,40.0833331342373" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Disease\Disease SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Disease\to Disease SnowFlake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Patient">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Sequence Container\Patient\to Patient SnowFlake"
+          TopLeft="386.5,131.083332682235" />
+        <NodeLayout
+          Size="135.5,42"
+          Id="Package\Sequence Container\Patient\Patient SQL"
+          TopLeft="146.5,90.9999995479981" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Patient.Paths[OLE DB Source Output]"
+          TopLeft="282,111.999999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104.5,40.0833331342369"
+              Start="0,0"
+              End="97,40.0833331342369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.25,0"
+                    Point2="52.25,0"
+                    Point3="52.25,4" />
+                  <mssgle:LineSegment
+                    End="52.25,36.0833331342369" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.25,36.0833331342369"
+                    Point2="52.25,40.0833331342369"
+                    Point3="56.25,40.0833331342369" />
+                  <mssgle:LineSegment
+                    End="97,40.0833331342369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Patient\Patient SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Patient\to Patient SnowFlake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Symptom">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Sequence Container\Symptom\Symptom SQL"
+          TopLeft="146.5,90.9999995479981" />
+        <NodeLayout
+          Size="189.5,42"
+          Id="Package\Sequence Container\Symptom\to Symptom SnowFlake"
+          TopLeft="386.5,131.083332682235" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Symptom.Paths[OLE DB Source Output]"
+          TopLeft="293.5,111.999999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93,40.0833331342369"
+              Start="0,0"
+              End="85.5,40.0833331342369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.5,0"
+                    Point2="46.5,0"
+                    Point3="46.5,4" />
+                  <mssgle:LineSegment
+                    End="46.5,36.0833331342369" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.5,36.0833331342369"
+                    Point2="46.5,40.0833331342369"
+                    Point3="50.5,40.0833331342369" />
+                  <mssgle:LineSegment
+                    End="85.5,40.0833331342369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Symptom\Symptom SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Symptom\to Symptom SnowFlake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Insurance">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Sequence Container\Insurance\Insurance SQL"
+          TopLeft="145.833333333333,90.9999995479981" />
+        <NodeLayout
+          Size="191.5,42"
+          Id="Package\Sequence Container\Insurance\to Insurance SnowFlake"
+          TopLeft="386.5,131.083332682235" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Insurance.Paths[OLE DB Source Output]"
+          TopLeft="294.833333333333,111.999999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.6666666666667,40.0833331342369"
+              Start="0,0"
+              End="84.1666666666667,40.0833331342369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.8333333333333,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.8333333333333,0"
+                    Point2="45.8333333333333,0"
+                    Point3="45.8333333333333,4" />
+                  <mssgle:LineSegment
+                    End="45.8333333333333,36.0833331342369" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.8333333333333,36.0833331342369"
+                    Point2="45.8333333333333,40.0833331342369"
+                    Point3="49.8333333333333,40.0833331342369" />
+                  <mssgle:LineSegment
+                    End="84.1666666666667,40.0833331342369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Insurance\Insurance SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Insurance\to Insurance SnowFlake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Medical">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container\Medical\Medical SQL"
+          TopLeft="145.833333333333,90.9999995479981" />
+        <NodeLayout
+          Size="181.5,42"
+          Id="Package\Sequence Container\Medical\to Medical SnowFlake"
+          TopLeft="386.5,131.083332682235" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Medical.Paths[OLE DB Source Output]"
+          TopLeft="284.833333333333,111.999999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.666666666667,40.0833331342369"
+              Start="0,0"
+              End="94.166666666667,40.0833331342369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.8333333333335,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.8333333333335,0"
+                    Point2="50.8333333333335,0"
+                    Point3="50.8333333333335,4" />
+                  <mssgle:LineSegment
+                    End="50.8333333333335,36.0833331342369" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.8333333333335,36.0833331342369"
+                    Point2="50.8333333333335,40.0833331342369"
+                    Point3="54.8333333333335,40.0833331342369" />
+                  <mssgle:LineSegment
+                    End="94.166666666667,40.0833331342369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Medical\Medical SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Medical\to Medical SnowFlake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Medical Detail">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container\Medical Detail\Medical SQL"
+          TopLeft="145.833333333333,90.9999995479981" />
+        <NodeLayout
+          Size="181.5,42"
+          Id="Package\Sequence Container\Medical Detail\to Medical SnowFlake"
+          TopLeft="386.5,131.083332682235" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Medical Detail.Paths[OLE DB Source Output]"
+          TopLeft="284.833333333333,111.999999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.666666666667,40.0833331342369"
+              Start="0,0"
+              End="94.166666666667,40.0833331342369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.8333333333335,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.8333333333335,0"
+                    Point2="50.8333333333335,0"
+                    Point3="50.8333333333335,4" />
+                  <mssgle:LineSegment
+                    End="50.8333333333335,36.0833331342369" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.8333333333335,36.0833331342369"
+                    Point2="50.8333333333335,40.0833331342369"
+                    Point3="54.8333333333335,40.0833331342369" />
+                  <mssgle:LineSegment
+                    End="94.166666666667,40.0833331342369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Medical Detail\Medical SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Medical Detail\to Medical SnowFlake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

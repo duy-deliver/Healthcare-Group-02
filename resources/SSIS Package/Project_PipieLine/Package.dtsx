@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="90"
-  DTS:VersionGUID="{2F802299-F929-4A3B-96F0-A96F93ACEA66}">
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{B7228996-BFCB-49BC-B2CA-AC15545D20B0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -611,7 +611,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{BBE9BC32-C5E0-44D2-A250-A89899C43C83}"
-              SQLTask:SqlStatementSource="delete from [dbo].[Dim_Medical];&#xA;delete from [dbo].[Dim_MedicalDetail];&#xA;delete from [dbo].[Dim_Insurance]; &#xA;delete from [dbo].[Dim_Patient]; &#xA;delete from [dbo].[Dim_Symptom];&#xA;delete from [dbo].[Dim_Disease];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Disease]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Disease;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Insurance]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Insurance;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Medical]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Medical;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_MedicalDetail]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_MedicalDetail;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Patient]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Patient;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Symptom]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Symptom;&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -628,7 +628,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{BBE9BC32-C5E0-44D2-A250-A89899C43C83}"
-              SQLTask:SqlStatementSource="&#xA;ALTER TABLE [dbo].[Dim_Symptom]&#xA;DROP CONSTRAINT FK_Disease_Symptom;&#xA;Go&#xA;&#xA;ALTER TABLE [dbo].[Dim_MedicalDetail]&#xA;DROP CONSTRAINT FK_MedicalDetail_Symptom;&#xA;Go&#xA;&#xA;ALTER TABLE [dbo].[Dim_MedicalDetail]&#xA;DROP CONSTRAINT  FK_MedicalDetail_Medical;&#xA;Go&#xA;&#xA;ALTER TABLE [dbo].[Dim_Medical]&#xA;DROP CONSTRAINT  FK_Medical_Patient;&#xA;Go&#xA;&#xA;ALTER TABLE [dbo].[Dim_Patient]&#xA;DROP CONSTRAINT  FK_Insurance_Patient;&#xA;Go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="&#xA;IF ( OBJECT_ID ( 'FK_Disease_Symptom' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_Symptom]&#xA;&#x9;DROP CONSTRAINT FK_Disease_Symptom;&#xA;END&#xA;GO&#xA;&#xA;IF ( OBJECT_ID ( 'FK_MedicalDetail_Symptom' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_MedicalDetail]&#xA;&#x9;DROP CONSTRAINT FK_MedicalDetail_Symptom;&#xA;END&#xA;GO&#xA;&#xA;IF ( OBJECT_ID ( 'FK_MedicalDetail_Medical' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_MedicalDetail]&#xA;&#x9;DROP CONSTRAINT  FK_MedicalDetail_Medical;&#xA;END&#xA;Go&#xA;&#xA;IF ( OBJECT_ID ( 'FK_Medical_Patient' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_Medical]&#xA;&#x9;DROP CONSTRAINT  FK_Medical_Patient;&#xA;END&#xA;Go&#xA;&#xA;IF ( OBJECT_ID ( 'FK_Insurance_Patient' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_Patient]&#xA;&#x9;DROP CONSTRAINT  FK_Insurance_Patient;&#xA;END&#xA;Go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1065,7 +1065,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                      name="FastLoadOptions">CHECK_CONSTRAINTS</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -5553,6 +5553,47 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="128.5,42"
+          Id="Package\Adding PK"
+          TopLeft="337.857142857143,663.392853971926" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Deleting before load\Before Loading"
+          TopLeft="22.3075396825394,91.8224203104613" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Deleting before load\Delete PK"
+          TopLeft="39.5,11.6904753525815" />
+        <EdgeLayout
+          Id="Package\Deleting before load.PrecedenceConstraints[Constraint]"
+          TopLeft="99.9037698412697,53.6904753525815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.1319449578798"
+              Start="0,0"
+              End="0,30.6319449578798">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6319449578798" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,189"
+          Size="205,232"
+          Id="Package\Deleting before load"
+          TopLeft="77.8571428571428,77.6190475421766" />
+        <NodeLayout
           Size="145,42"
           Id="Package\Load Stagging from CSV File\Dim Symptom"
           TopLeft="50.5,111.249998789281" />
@@ -5583,47 +5624,6 @@
           Size="636.5,221"
           Id="Package\Load Stagging from CSV File"
           TopLeft="82.5873015873017,392.75859659904" />
-        <NodeLayout
-          Size="128.5,42"
-          Id="Package\Adding PK"
-          TopLeft="337.857142857143,663.392853971926" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Deleting before load\Delete PK"
-          TopLeft="39.5,11.6904753525815" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Deleting before load\Before Loading"
-          TopLeft="22.3075396825394,91.8224203104613" />
-        <EdgeLayout
-          Id="Package\Deleting before load.PrecedenceConstraints[Constraint]"
-          TopLeft="99.9037698412697,53.6904753525815">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.1319449578798"
-              Start="0,0"
-              End="0,30.6319449578798">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.6319449578798" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="205,189"
-          Size="205,232"
-          Id="Package\Deleting before load"
-          TopLeft="77.8571428571428,77.6190475421766" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="180.357142857143,309.619047542177">
@@ -5689,6 +5689,14 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="98.5,42"
+          Id="Package\Load Stagging from CSV File\Dim Symptom\Sort"
+          TopLeft="362.666666666667,168.666666666667" />
+        <NodeLayout
+          Size="150.5,42"
+          Id="Package\Load Stagging from CSV File\Dim Symptom\CSV_Symptom"
+          TopLeft="138.5,68.9166665429042" />
+        <NodeLayout
           Size="148,42"
           Id="Package\Load Stagging from CSV File\Dim Symptom\Dim_Symptom"
           TopLeft="758.5,168.666666666667" />
@@ -5696,10 +5704,6 @@
           Size="157,42"
           Id="Package\Load Stagging from CSV File\Dim Symptom\Data Conversion"
           TopLeft="526.666666666667,168" />
-        <NodeLayout
-          Size="98.5,42"
-          Id="Package\Load Stagging from CSV File\Dim Symptom\Sort"
-          TopLeft="362.666666666667,168.666666666667" />
         <EdgeLayout
           Id="Package\Load Stagging from CSV File\Dim Symptom.Paths[Sort Output]"
           TopLeft="461.166666666667,189.333333333333">
@@ -5722,32 +5726,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Stagging from CSV File\Dim Symptom.Paths[Data Conversion Output]"
-          TopLeft="683.666666666667,189.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="74.833333333333,0"
-              Start="0,0"
-              End="67.333333333333,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="67.333333333333,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150.5,42"
-          Id="Package\Load Stagging from CSV File\Dim Symptom\CSV_Symptom"
-          TopLeft="138.5,68.9166665429042" />
         <EdgeLayout
           Id="Package\Load Stagging from CSV File\Dim Symptom.Paths[Flat File Source Output]"
           TopLeft="213.75,110.916666542904">
@@ -5782,6 +5760,28 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Stagging from CSV File\Dim Symptom.Paths[Data Conversion Output]"
+          TopLeft="683.666666666667,189.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.833333333333,0"
+              Start="0,0"
+              End="67.333333333333,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.333333333333,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -5802,11 +5802,7 @@
     design-time-name="Package\Load Stagging from CSV File\Dim_Disease">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="141.5,42"
-          Id="Package\Load Stagging from CSV File\Dim_Disease\Dim_Disease"
-          TopLeft="686.923076923077,257.692307692308" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\Load Stagging from CSV File\Dim_Disease\Data Conversion"
@@ -5815,6 +5811,14 @@
           Size="98.5,42"
           Id="Package\Load Stagging from CSV File\Dim_Disease\Sort"
           TopLeft="426.923076923077,162.307692307692" />
+        <NodeLayout
+          Size="144.5,42"
+          Id="Package\Load Stagging from CSV File\Dim_Disease\CSV_Disease"
+          TopLeft="236,91" />
+        <NodeLayout
+          Size="141.5,42"
+          Id="Package\Load Stagging from CSV File\Dim_Disease\Dim_Disease"
+          TopLeft="686.923076923077,257.692307692308" />
         <EdgeLayout
           Id="Package\Load Stagging from CSV File\Dim_Disease.Paths[Sort Output]"
           TopLeft="525.423076923077,182.538461538462">
@@ -5834,7 +5838,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Stagging from CSV File\Dim_Disease.Paths[Flat File Source Output]"
+          TopLeft="308.25,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.923076923077,29.307692307692"
+              Start="0,0"
+              End="167.923076923077,21.807692307692">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.653846153846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.653846153846"
+                    Point2="0,14.653846153846"
+                    Point3="4,14.653846153846" />
+                  <mssgle:LineSegment
+                    End="163.923076923077,14.653846153846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="163.923076923077,14.653846153846"
+                    Point2="167.923076923077,14.653846153846"
+                    Point3="167.923076923077,18.653846153846" />
+                  <mssgle:LineSegment
+                    End="167.923076923077,21.807692307692" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5868,45 +5910,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="144.5,42"
-          Id="Package\Load Stagging from CSV File\Dim_Disease\CSV_Disease"
-          TopLeft="236,91" />
-        <EdgeLayout
-          Id="Package\Load Stagging from CSV File\Dim_Disease.Paths[Flat File Source Output]"
-          TopLeft="308.25,133">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="167.923076923077,29.307692307692"
-              Start="0,0"
-              End="167.923076923077,21.807692307692">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.653846153846" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.653846153846"
-                    Point2="0,14.653846153846"
-                    Point3="4,14.653846153846" />
-                  <mssgle:LineSegment
-                    End="163.923076923077,14.653846153846" />
-                  <mssgle:CubicBezierSegment
-                    Point1="163.923076923077,14.653846153846"
-                    Point2="167.923076923077,14.653846153846"
-                    Point3="167.923076923077,18.653846153846" />
-                  <mssgle:LineSegment
-                    End="167.923076923077,21.807692307692" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5931,10 +5937,6 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.5,42"
-          Id="Package\Load Stagging from CSV File\Dim_Insurance\Dim_Insurance"
-          TopLeft="858,223" />
-        <NodeLayout
           Size="157,42"
           Id="Package\Load Stagging from CSV File\Dim_Insurance\Data Conversion"
           TopLeft="609,223" />
@@ -5942,6 +5944,14 @@
           Size="98.5,42"
           Id="Package\Load Stagging from CSV File\Dim_Insurance\Sort"
           TopLeft="458,162" />
+        <NodeLayout
+          Size="152.5,42"
+          Id="Package\Load Stagging from CSV File\Dim_Insurance\CSV_Insurance"
+          TopLeft="250,90" />
+        <NodeLayout
+          Size="149.5,42"
+          Id="Package\Load Stagging from CSV File\Dim_Insurance\Dim_Insurance"
+          TopLeft="858,223" />
         <EdgeLayout
           Id="Package\Load Stagging from CSV File\Dim_Insurance.Paths[Sort Output]"
           TopLeft="556.5,183">
@@ -5977,32 +5987,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Stagging from CSV File\Dim_Insurance.Paths[Data Conversion Output]"
-          TopLeft="766,244">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92,0"
-              Start="0,0"
-              End="84.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="84.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152.5,42"
-          Id="Package\Load Stagging from CSV File\Dim_Insurance\CSV_Insurance"
-          TopLeft="250,90" />
-        <EdgeLayout
           Id="Package\Load Stagging from CSV File\Dim_Insurance.Paths[Flat File Source Output]"
           TopLeft="326.25,132">
           <EdgeLayout.Curve>
@@ -6028,6 +6012,28 @@
                     Point3="181,19" />
                   <mssgle:LineSegment
                     End="181,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Stagging from CSV File\Dim_Insurance.Paths[Data Conversion Output]"
+          TopLeft="766,244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92,0"
+              Start="0,0"
+              End="84.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6197,21 +6203,55 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="157,42"
+          Id="Package\Load Stagging from CSV File\Dim_MedicalDetail\Data Conversion"
+          TopLeft="388,179" />
+        <NodeLayout
           Size="98.5,42"
           Id="Package\Load Stagging from CSV File\Dim_MedicalDetail\Sort"
           TopLeft="247,116" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Load Stagging from CSV File\Dim_MedicalDetail\Dim_MedicalDetail"
-          TopLeft="549.5,258.214285714286" />
         <NodeLayout
           Size="169.5,42"
           Id="Package\Load Stagging from CSV File\Dim_MedicalDetail\CSV_MedicalDetail"
           TopLeft="117,35" />
         <NodeLayout
-          Size="157,42"
-          Id="Package\Load Stagging from CSV File\Dim_MedicalDetail\Data Conversion"
-          TopLeft="388,179" />
+          Size="167,42"
+          Id="Package\Load Stagging from CSV File\Dim_MedicalDetail\Dim_MedicalDetail"
+          TopLeft="549.5,256.214285714286" />
+        <EdgeLayout
+          Id="Package\Load Stagging from CSV File\Dim_MedicalDetail.Paths[Sort Output]"
+          TopLeft="345.5,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.5,63"
+              Start="0,0"
+              End="35,63">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="17.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.25,0"
+                    Point2="21.25,0"
+                    Point3="21.25,4" />
+                  <mssgle:LineSegment
+                    End="21.25,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.25,59"
+                    Point2="21.25,63"
+                    Point3="25.25,63" />
+                  <mssgle:LineSegment
+                    End="35,63" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Stagging from CSV File\Dim_MedicalDetail.Paths[Flat File Source Output]"
           TopLeft="201.75,77">
@@ -6252,60 +6292,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="166.5,37.214285714286"
+              EndConnector="166.5,35.214285714286"
               Start="0,0"
-              End="166.5,29.714285714286">
+              End="166.5,27.714285714286">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.607142857143" />
+                    End="0,13.607142857143" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.607142857143"
-                    Point2="0,18.607142857143"
-                    Point3="4,18.607142857143" />
+                    Point1="0,13.607142857143"
+                    Point2="0,17.607142857143"
+                    Point3="4,17.607142857143" />
                   <mssgle:LineSegment
-                    End="162.5,18.607142857143" />
+                    End="162.5,17.607142857143" />
                   <mssgle:CubicBezierSegment
-                    Point1="162.5,18.607142857143"
-                    Point2="166.5,18.607142857143"
-                    Point3="166.5,22.607142857143" />
+                    Point1="162.5,17.607142857143"
+                    Point2="166.5,17.607142857143"
+                    Point3="166.5,21.607142857143" />
                   <mssgle:LineSegment
-                    End="166.5,29.714285714286" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Stagging from CSV File\Dim_MedicalDetail.Paths[Sort Output]"
-          TopLeft="345.5,137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="42.5,63"
-              Start="0,0"
-              End="35,63">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="17.25,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.25,0"
-                    Point2="21.25,0"
-                    Point3="21.25,4" />
-                  <mssgle:LineSegment
-                    End="21.25,59" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.25,59"
-                    Point2="21.25,63"
-                    Point3="25.25,63" />
-                  <mssgle:LineSegment
-                    End="35,63" />
+                    End="166.5,27.714285714286" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6336,17 +6342,21 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="98.5,42"
-          Id="Package\Load Stagging from CSV File\Dim_Patient\Sort"
-          TopLeft="469.285714285714,64.2857142857143" />
-        <NodeLayout
           Size="157,42"
           Id="Package\Load Stagging from CSV File\Dim_Patient\Data Conversion"
           TopLeft="328.571428571429,146.428571428571" />
         <NodeLayout
+          Size="139,42"
+          Id="Package\Load Stagging from CSV File\Dim_Patient\CSV_Patient"
+          TopLeft="140,41" />
+        <NodeLayout
           Size="136.5,42"
           Id="Package\Load Stagging from CSV File\Dim_Patient\Dim_Patient"
           TopLeft="557.142857142857,235.714285714286" />
+        <NodeLayout
+          Size="98.5,42"
+          Id="Package\Load Stagging from CSV File\Dim_Patient\Sort"
+          TopLeft="469.285714285714,64.2857142857143" />
         <EdgeLayout
           Id="Package\Load Stagging from CSV File\Dim_Patient.Paths[Sort Output]"
           TopLeft="518.535714285714,106.285714285714">
@@ -6382,44 +6392,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Stagging from CSV File\Dim_Patient.Paths[Data Conversion Output]"
-          TopLeft="407.071428571429,188.428571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="218.321428571428,47.2857142857143"
-              Start="0,0"
-              End="218.321428571428,39.7857142857143">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.6428571428571" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.6428571428571"
-                    Point2="0,23.6428571428571"
-                    Point3="4,23.6428571428571" />
-                  <mssgle:LineSegment
-                    End="214.321428571428,23.6428571428571" />
-                  <mssgle:CubicBezierSegment
-                    Point1="214.321428571428,23.6428571428571"
-                    Point2="218.321428571428,23.6428571428571"
-                    Point3="218.321428571428,27.6428571428571" />
-                  <mssgle:LineSegment
-                    End="218.321428571428,39.7857142857143" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Load Stagging from CSV File\Dim_Patient\CSV_Patient"
-          TopLeft="140,41" />
-        <EdgeLayout
           Id="Package\Load Stagging from CSV File\Dim_Patient.Paths[Flat File Source Output]"
           TopLeft="279,62">
           <EdgeLayout.Curve>
@@ -6445,6 +6417,40 @@
                     Point3="99.142857142857,23.2857142857143" />
                   <mssgle:LineSegment
                     End="182.785714285714,23.2857142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Stagging from CSV File\Dim_Patient.Paths[Data Conversion Output]"
+          TopLeft="407.071428571429,188.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="218.321428571428,47.2857142857143"
+              Start="0,0"
+              End="218.321428571428,39.7857142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6428571428571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.6428571428571"
+                    Point2="0,23.6428571428571"
+                    Point3="4,23.6428571428571" />
+                  <mssgle:LineSegment
+                    End="214.321428571428,23.6428571428571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="214.321428571428,23.6428571428571"
+                    Point2="218.321428571428,23.6428571428571"
+                    Point3="218.321428571428,27.6428571428571" />
+                  <mssgle:LineSegment
+                    End="218.321428571428,39.7857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
