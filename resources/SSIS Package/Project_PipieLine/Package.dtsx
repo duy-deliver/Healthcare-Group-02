@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="118"
-  DTS:VersionGUID="{B7228996-BFCB-49BC-B2CA-AC15545D20B0}">
+  DTS:VersionBuild="154"
+  DTS:VersionGUID="{5F4F642A-01F2-4127-A348-C0101A1AB634}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -138,6 +138,118 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Disease01]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{574043CD-B384-4913-B87A-6468710E7B81}"
+      DTS:ObjectName="CSV_Disease01">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\HealthcareProject\Disease-2021_08_17-11_19_34_PM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Disease_ID"
+              DTS:DTSID="{2F391F76-B45C-400E-99BA-FA85505AABDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Disease_Name"
+              DTS:DTSID="{F7DDC874-11C6-42A6-8214-D3B05B21308E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blood_Pressure_mmHg"
+              DTS:DTSID="{746D7318-3B1A-4B0F-98CE-336C0B551462}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blood_Sugar_mgdL"
+              DTS:DTSID="{EE07357F-ACE6-482E-AB3E-3D55DFE0E8B7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Disease1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{64CFEB39-72C4-47CB-B81C-A92591322942}"
+      DTS:ObjectName="CSV_Disease1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\Project 1\Disease-2021_08_12-03_55_08_AM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Disease_ID"
+              DTS:DTSID="{AADEEB62-F3A1-49F1-9BA6-1FC79313FDDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Disease_Name"
+              DTS:DTSID="{6877652D-779B-4848-A10C-51A7F91F10C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blood_Pressure_mmHg"
+              DTS:DTSID="{44D96B90-1316-4CA4-8120-D8A56F4F95F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blood_Sugar_mgdL"
+              DTS:DTSID="{AB6146CC-8368-4B62-94D4-047308452A02}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CSV_Insurance]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{C9E5FA7A-4CB9-44FB-8159-3A6DDBF82782}"
@@ -188,6 +300,118 @@
               DTS:TextQualified="True"
               DTS:ObjectName="Insurance_Expired"
               DTS:DTSID="{BA197D2B-658C-4375-A90E-E9F7FA36B1AD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Insurance01]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BD6231A0-8BC9-4389-8F01-B014E10AADEB}"
+      DTS:ObjectName="CSV_Insurance01">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\HealthcareProject\Insurance-2021_08_17-11_19_34_PM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_ID"
+              DTS:DTSID="{59B2F528-B6FF-493B-9C03-52A323F34B27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_Cover_Amount"
+              DTS:DTSID="{F03D0EC2-AFE0-48D6-B158-96DC892CE374}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_Type"
+              DTS:DTSID="{A867406F-0E48-4EF1-935E-CC20170EFA66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_Expired"
+              DTS:DTSID="{86A707FF-973B-45D4-8F78-1D02BDFC28A6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Insurance1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9EE877A2-8A92-45E0-A81D-FF1ACFF524B3}"
+      DTS:ObjectName="CSV_Insurance1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\Project 1\Insurance-2021_08_12-03_55_07_AM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_ID"
+              DTS:DTSID="{B121BD47-2A79-4B77-8E3B-0CB9E96A1CC4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_Cover_Amount"
+              DTS:DTSID="{D1AEC6E6-54FA-40B3-B7E1-559293BFF447}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_Type"
+              DTS:DTSID="{DB8937DF-9CB4-47DC-89CC-556AA8A21B39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_Expired"
+              DTS:DTSID="{405042CC-A275-48EC-989C-AFCBBA3505F6}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -280,6 +504,320 @@
               DTS:TextQualified="True"
               DTS:ObjectName="Surgery_Status"
               DTS:DTSID="{64018F3F-F3DA-4F41-A61E-07A7EEA509A1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Medical01]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{60E499BD-883D-41F5-8B4E-96A972B2E7FF}"
+      DTS:ObjectName="CSV_Medical01">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\HealthcareProject\Medical-2021_08_17-11_19_34_PM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Medical_ID"
+              DTS:DTSID="{A2500109-21A4-4570-99CA-2A8E88B9825E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_ID"
+              DTS:DTSID="{7FB4955B-ADA9-4ECB-99FE-F7DE62F3FC36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Appointment_Date"
+              DTS:DTSID="{C9789180-BE18-47AF-A1C3-F5D14BED3B05}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spouse_Name"
+              DTS:DTSID="{3F1147F3-9F5E-42EB-9205-4E36A1815863}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spouse_Phone"
+              DTS:DTSID="{999C0317-9B46-4A4F-8DA6-0B1207AB198F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spouse_Occupation"
+              DTS:DTSID="{E591FA8B-6E09-40A3-9C5B-A4A1A9460EE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Social_Security_Last_4"
+              DTS:DTSID="{3752D80F-E0CC-46F8-A3EC-36397EB088C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Surgery_Status"
+              DTS:DTSID="{6652DAC7-63E1-455E-A819-866B4DCA27F8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Medical1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9EE0C364-7D99-41AB-9D69-77CA3601F024}"
+      DTS:ObjectName="CSV_Medical1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\Project 1\Medical-2021_08_12-03_55_08_AM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Medical_ID"
+              DTS:DTSID="{BE289818-81ED-40C0-8AD1-F7C07F41CA78}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_ID"
+              DTS:DTSID="{E9A29A94-1089-4930-90C8-CDFFDCF681D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Appointment_Date"
+              DTS:DTSID="{20D3F001-65C1-4397-ADFB-5A30CD4BA93D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spouse_Name"
+              DTS:DTSID="{B9359E07-4258-4612-9846-B22F5F346446}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spouse_Phone"
+              DTS:DTSID="{58DC38D4-6BF5-48DA-A29F-8D439381643D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spouse_Occupation"
+              DTS:DTSID="{920714E4-8947-43F6-84FD-A8219E58FDE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Social_Security_Last_4"
+              DTS:DTSID="{F8641047-CA2F-427E-971F-7E7DF21E7474}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Surgery_Status"
+              DTS:DTSID="{C87504C9-D7FF-4D85-AAA0-833E0ACDE5D5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_MedicalDetail]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CC12AD88-E34C-4777-A06A-C8EDD8EC553B}"
+      DTS:ObjectName="CSV_MedicalDetail">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\HealthcareProject\MedicalDetail-2021_08_17-11_19_34_PM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Medical_ID"
+              DTS:DTSID="{3E5B8F82-49B6-4F33-A5A6-356DD6B0635C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symptom_ID"
+              DTS:DTSID="{9CC5737D-72EB-480D-8076-C104788A0A28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Doctor_Name"
+              DTS:DTSID="{C1481BDB-CDD0-4F95-B295-25D8553666C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Allergies"
+              DTS:DTSID="{1A53E2AE-4DC0-43BE-B9A4-FA2B15932D28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Work_Phone"
+              DTS:DTSID="{CFFB99C8-A58E-4638-9844-2425A5EF93A7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_MedicalDetail1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C291EACA-A516-4386-8BB3-3E567CF01992}"
+      DTS:ObjectName="CSV_MedicalDetail1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\Project 1\MedicalDetail-2021_08_12-03_55_10_AM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Medical_ID"
+              DTS:DTSID="{9085091C-2242-405A-94AA-DCB3FD082F4F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symptom_ID"
+              DTS:DTSID="{9B3E8438-E2EF-45F9-9FA7-3199E45C2044}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Doctor_Name"
+              DTS:DTSID="{9EB3F4ED-6DF1-4874-9392-20EDBB59BD05}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Allergies"
+              DTS:DTSID="{E98DD753-4E3C-4465-A3EE-7B6D58DEF24A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Work_Phone"
+              DTS:DTSID="{0022D310-C30C-49C0-A4C0-1DE784DE8BA3}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -414,6 +952,262 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Patient01]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FDCC3D6E-E5C2-4142-9EB5-98CBAE118CE5}"
+      DTS:ObjectName="CSV_Patient01">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\HealthcareProject\Patient-2021_08_17-11_19_34_PM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_ID"
+              DTS:DTSID="{B0B60257-8463-45AD-959B-D6ED385A118F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_ID"
+              DTS:DTSID="{5F35FFBA-D9CA-4E72-8382-8D50025F03EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Name"
+              DTS:DTSID="{2480C988-8A2C-4034-9CA6-F4B92620C658}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Gender"
+              DTS:DTSID="{46F94D92-BEEC-4973-9F50-13E81AC9B484}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Age"
+              DTS:DTSID="{E856B5AE-76DB-4906-938A-80B38DA4CBCE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Bloodtype"
+              DTS:DTSID="{F0063724-11E3-41EB-80B1-04EEFE769CA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Weight_kg"
+              DTS:DTSID="{A48F6C32-7A2B-42AE-AF49-DD3967114FBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="History_Covid"
+              DTS:DTSID="{31A48BEA-C7F4-49B1-B73C-D1BFF307E654}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blood_Pressure_mmHG"
+              DTS:DTSID="{65A11956-3B78-4947-ABFB-29542A552CC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blood_Sugar_mgdL"
+              DTS:DTSID="{0C716B6E-1F4C-46AB-A0B7-5FEE0943C2D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Zip"
+              DTS:DTSID="{337D7E25-6C03-46DB-9CC5-1A81865223B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_State"
+              DTS:DTSID="{010A462C-EFE5-49FB-85BD-6EAE6E124B75}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV_Patient1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7C99A0D0-35CB-487A-A652-7DBA95D7AD5E}"
+      DTS:ObjectName="CSV_Patient1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\Project 1\Patient-2021_08_12-03_55_07_AM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_ID"
+              DTS:DTSID="{0D87D428-F9EA-44DE-8D4B-48718121E261}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Insurance_ID"
+              DTS:DTSID="{5FB7859E-5D8D-4C9E-888D-EAC514B4D2D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Name"
+              DTS:DTSID="{AE372A1F-EF3D-473F-9411-CF43345A32AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Gender"
+              DTS:DTSID="{6B6C5D76-8B3C-44C1-AD8E-D3BBF8F9BDE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Age"
+              DTS:DTSID="{D9418E6B-EE77-4C75-8FAC-597702B0A29F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Bloodtype"
+              DTS:DTSID="{0CA35A18-E018-4E6F-A589-FBB8EEBD0C92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Weight_kg"
+              DTS:DTSID="{2F68C69E-092E-4888-88B6-ED90FBC248D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="History_Covid"
+              DTS:DTSID="{9819A0F3-EB09-49CD-AB43-002030E7455D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blood_Pressure_mmHG"
+              DTS:DTSID="{3076DA90-1D7B-4F1F-BFD3-99EE6161AB6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Blood_Sugar_mgdL"
+              DTS:DTSID="{CB1F113E-ED77-48AA-8645-338EE36E2308}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_Zip"
+              DTS:DTSID="{2BA1D202-1E03-4406-B931-C7E7AFA1E66C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_State"
+              DTS:DTSID="{9271A9CE-2CFA-4475-B0B0-F8F15BFAE839}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CSV_Symptom]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{0A5EBE38-1410-47B5-997C-3A9F6BA4BF52}"
@@ -479,27 +1273,198 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Diagnosis_DW]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{93E122BE-0CF6-4491-967B-11E32F633327}"
-      DTS:ObjectName="DESKTOP-LONCI57\SQLEXPRESS.Diagnosis_DW">
+      DTS:refId="Package.ConnectionManagers[CSV_Symptom01]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4260057D-A625-4A8D-84B3-0C6AEEDAD83F}"
+      DTS:ObjectName="CSV_Symptom01">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LONCI57\SQLEXPRESS;Initial Catalog=Diagnosis_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\HealthcareProject\Symptom-2021_08_17-11_19_34_PM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symtom_ID"
+              DTS:DTSID="{0057D8D9-3495-404D-B3BA-429BDF881F0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Disease_ID"
+              DTS:DTSID="{C9341EDC-22A7-456E-BFE0-CFD8E12920D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symptom_Name"
+              DTS:DTSID="{EC57C0A6-ECE2-461F-B24F-001336BBD676}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symptom_Stage"
+              DTS:DTSID="{4BEB06E0-A3DD-49CB-B7F1-B72E8CF081FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symptom_Stage_Desc"
+              DTS:DTSID="{59E93B78-29A0-4576-9A9D-536CA64B5EA6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+      DTS:refId="Package.ConnectionManagers[CSV_Symptom1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B2B8DF29-2F45-4D55-82F4-44B84F11A84C}"
+      DTS:ObjectName="CSV_Symptom1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\17737\Desktop\Project 1\Symptom-2021_08_12-03_55_08_AM.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symtom_ID"
+              DTS:DTSID="{51A8F297-2061-4267-9A51-CD4B2609D891}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Disease_ID"
+              DTS:DTSID="{D72D9626-70C4-4509-A958-B4BF98974B1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symptom_Name"
+              DTS:DTSID="{D270D9BA-4E62-4591-AD0D-89C8F1965A12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symptom_Stage"
+              DTS:DTSID="{0503851E-F83A-4DBB-A450-E3FF48E04E34}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Symptom_Stage_Desc"
+              DTS:DTSID="{823171B6-422A-4D54-9734-A9332C7F0DFF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DataProfiling]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{9B7A83AC-4523-439F-B5A7-3782AC0DD43C}"
+      DTS:ObjectName="DataProfiling">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\17737\Desktop\FPT\Healthcare-Group-02-SSIS-from-CSV-to-Stagging-\DataProfiling" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQL.AdventureWorks2017]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{BBE9BC32-C5E0-44D2-A250-A89899C43C83}"
-      DTS:ObjectName="DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02">
+      DTS:DTSID="{DFAEC46D-7BAB-4115-BF48-CA6F06BA53C5}"
+      DTS:ObjectName="DESKTOP-5EO5NDK\MSSQL.AdventureWorks2017">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LONCI57\SQLEXPRESS;Initial Catalog=Pipeline_Group02;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-5EO5NDK\MSSQL;Initial Catalog=AdventureWorks2017;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{50F0522C-B42E-4E2E-9BA2-6E73AD7188A0}"
+      DTS:ObjectName="DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-5EO5NDK\MSSQLSERVER01;Initial Catalog=Pipeline_Group02;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02 1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{A4CD680B-9D17-45F9-8121-5B2C2C09B87C}"
+      DTS:ObjectName="DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-5EO5NDK\MSSQLSERVER01;Initial Catalog=Pipeline_Group02;Integrated Security=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02 2]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{7E36F93B-8759-42B5-B5DB-C7ECE0620981}"
+      DTS:ObjectName="DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-5EO5NDK\MSSQLSERVER01;Initial Catalog=Pipeline_Group02;Integrated Security=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02 3]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{7C866855-9947-4BDA-BF2E-88DC679CF2C5}"
+      DTS:ObjectName="DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-5EO5NDK\MSSQLSERVER01;Initial Catalog=Pipeline_Group02;Integrated Security=True;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -567,23 +1532,198 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[log record]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{1CBEF3D7-850C-4832-9B98-3A77DD1D8486}"
+      DTS:ObjectName="log record">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\17737\Desktop\FPT\Healthcare-Group-02-SSIS-from-CSV-to-Stagging-\log record" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PackageProfiling]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{930B3DDA-0F80-4129-96A5-1AB4BEA430AC}"
+      DTS:ObjectName="PackageProfiling">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\17737\Desktop\FPT\Healthcare-Group-02-SSIS-from-CSV-to-Stagging-\PackageProfiling" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{ACE0C010-4E70-457E-888D-FC2E4DACBD45}"
+      DTS:ObjectName="SMTP Connection Manager">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=TBSClient;UseWindowsAuthentication=False;EnableSsl=False;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="log record"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{E498E18A-C244-4B94-8B0E-85A59F44018E}"
+      DTS:ObjectName="SSIS log provider for Text files">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{F9BB80A2-8310-47D1-86F6-B4D02FC2D68F}"
+      DTS:ObjectName="EmailFrom">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">huyanh.ha.97@gmail.com</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{BE20DB88-1E24-4033-BE3D-E7DDFCE2F7E4}"
+      DTS:ObjectName="EmailTo">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">aha2@depaul.edu</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{9A9B179E-84E2-4033-AFE0-106444A47929}"
+      DTS:ObjectName="Environment">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Prod</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{85233518-D97F-4012-8D26-C2CFB0DB1581}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::From]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="From">
+      <DTS:VariableValue
+        DTS:DataType="8">huyanh.ha.97@gmail.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8E099365-146D-49F9-9A30-0AA94919B87F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot; Hi guys,&#xA;&#xA;The package &quot;+ @[System::PackageName] + &quot; has failed in &quot; + @[$Package::Environment] + &quot; with the error&#xA;Error Code: &quot;+(DT_WSTR,50) @[System::ErrorCode]+&quot;&#xA;Error Description: &quot;+ @[System::ErrorDescription] +&quot;&#xA;Error Source: &quot;+ @[System::SourceName]+&quot;&#xA;&#xA;Please contact us if you have any concern.&#xA;&#xA;Thank you,&#xA;Dev Team&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MessageBody">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DB27B0D9-A269-4576-9F4B-FEECD2FF082C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SMTPort]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTPort">
+      <DTS:VariableValue
+        DTS:DataType="19">587</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{848BBA61-5316-4105-B836-BA733BE2598A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SMTPPassword]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTPPassword">
+      <DTS:VariableValue
+        DTS:DataType="8">password123</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EE3BA2CA-0045-4A4F-9C53-B977D0B8A2A9}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SMTPServer]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTPServer">
+      <DTS:VariableValue
+        DTS:DataType="8">smtp.gmail.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{72266A4A-02DD-4637-85DD-D41A3E4BE7C3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SMTPUsername]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTPUsername">
+      <DTS:VariableValue
+        DTS:DataType="8">huyanh.ha.97@gmail.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F592C6B2-C42F-4BDA-A936-67DE56B9B1AA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot; Hi guys,&#xA;&#xA;The package &quot;+ @[System::PackageName] + &quot; has failed in &quot; + @[$Package::Environment] + &quot; with the error&#xA;Error Code: &quot;+(DT_WSTR,50) @[System::ErrorCode]+&quot;&#xA;Error Description: &quot;+ @[System::ErrorDescription] +&quot;&#xA;Error Source: &quot;+ @[System::SourceName]+&quot;&#xA;&#xA;Please contact us if you have any concern.&#xA;&#xA;Thank you,&#xA;Dev Team&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Subject">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{40A70652-141C-48FE-B383-37635C44DBEB}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::To]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="To">
+      <DTS:VariableValue
+        DTS:DataType="8">aha2@depaul.edu</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{E498E18A-C244-4B94-8B0E-85A59F44018E}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Adding PK"
+      DTS:refId="Package\Adding FK"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{E7026154-3A98-4A7E-BDAD-B45A765B2649}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Adding PK"
+      DTS:ObjectName="Adding FK"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{BBE9BC32-C5E0-44D2-A250-A89899C43C83}"
+          SQLTask:Connection="{50F0522C-B42E-4E2E-9BA2-6E73AD7188A0}"
           SQLTask:SqlStatementSource="ALTER TABLE [dbo].[Dim_Symptom] with nocheck&#xA;ADD CONSTRAINT FK_Disease_Symptom&#xA;FOREIGN KEY (Disease_iD) REFERENCES [dbo].[Dim_Disease](Disease_iD);&#xA;Go &#xA;&#xA;ALTER TABLE [dbo].[Dim_MedicalDetail] with nocheck&#xA;ADD CONSTRAINT FK_MedicalDetail_Symptom&#xA;FOREIGN KEY (Symptom_iD) REFERENCES [dbo].[Dim_Symptom](Symptom_iD);&#xA;Go&#xA;&#xA;ALTER TABLE [dbo].[Dim_MedicalDetail] with nocheck&#xA;ADD CONSTRAINT FK_MedicalDetail_Medical&#xA;FOREIGN KEY (Medical_id) REFERENCES [dbo].[Dim_Medical](Medical_id);&#xA;Go&#xA;&#xA;ALTER TABLE [dbo].[Dim_Medical] with nocheck&#xA;ADD CONSTRAINT FK_Medical_Patient&#xA;FOREIGN KEY (Patient_id) REFERENCES [dbo].[Dim_Patient](Patient_id); &#xA;Go&#xA;&#xA;ALTER TABLE [dbo].[Dim_Patient] with nocheck&#xA;ADD CONSTRAINT FK_Insurance_Patient&#xA;FOREIGN KEY (Insurance_id) REFERENCES [dbo].[Dim_Insurance](Insurance_id); &#xA;Go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -596,6 +1736,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Deleting before load">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Deleting before load\Before Loading"
@@ -608,26 +1750,30 @@
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BBE9BC32-C5E0-44D2-A250-A89899C43C83}"
+              SQLTask:Connection="{50F0522C-B42E-4E2E-9BA2-6E73AD7188A0}"
               SQLTask:SqlStatementSource="IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Disease]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Disease;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Insurance]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Insurance;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Medical]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Medical;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_MedicalDetail]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_MedicalDetail;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Patient]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Patient;&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Dim_Symptom]') and TYPE = ( N'U'))&#xA;DELETE FROM Dim_Symptom;&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Deleting before load\Delete PK"
+          DTS:refId="Package\Deleting before load\Delete FK"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{6532225D-26E3-449E-AD3E-2167A6A5C024}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Delete PK"
+          DTS:ObjectName="Delete FK"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BBE9BC32-C5E0-44D2-A250-A89899C43C83}"
+              SQLTask:Connection="{50F0522C-B42E-4E2E-9BA2-6E73AD7188A0}"
               SQLTask:SqlStatementSource="&#xA;IF ( OBJECT_ID ( 'FK_Disease_Symptom' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_Symptom]&#xA;&#x9;DROP CONSTRAINT FK_Disease_Symptom;&#xA;END&#xA;GO&#xA;&#xA;IF ( OBJECT_ID ( 'FK_MedicalDetail_Symptom' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_MedicalDetail]&#xA;&#x9;DROP CONSTRAINT FK_MedicalDetail_Symptom;&#xA;END&#xA;GO&#xA;&#xA;IF ( OBJECT_ID ( 'FK_MedicalDetail_Medical' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_MedicalDetail]&#xA;&#x9;DROP CONSTRAINT  FK_MedicalDetail_Medical;&#xA;END&#xA;Go&#xA;&#xA;IF ( OBJECT_ID ( 'FK_Medical_Patient' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_Medical]&#xA;&#x9;DROP CONSTRAINT  FK_Medical_Patient;&#xA;END&#xA;Go&#xA;&#xA;IF ( OBJECT_ID ( 'FK_Insurance_Patient' ) IS NOT NULL )&#xA;BEGIN&#xA;&#x9;ALTER TABLE [dbo].[Dim_Patient]&#xA;&#x9;DROP CONSTRAINT  FK_Insurance_Patient;&#xA;END&#xA;Go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -637,7 +1783,7 @@
           DTS:refId="Package\Deleting before load.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{77538443-83EA-4520-B038-CE99D8BF1D26}"
-          DTS:From="Package\Deleting before load\Delete PK"
+          DTS:From="Package\Deleting before load\Delete FK"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Deleting before load\Before Loading" />
@@ -652,6 +1798,8 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Stagging from CSV File">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Load Stagging from CSV File\Dim Symptom"
@@ -663,6 +1811,8 @@
           DTS:ObjectName="Dim Symptom"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -689,8 +1839,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim Symptom\CSV_Symptom.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[CSV_Symptom]"
-                      connectionManagerRefId="Package.ConnectionManagers[CSV_Symptom]"
+                      connectionManagerID="Package.ConnectionManagers[CSV_Symptom01]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV_Symptom01]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -1074,8 +2224,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim Symptom\Dim_Symptom.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1372,6 +2522,8 @@
           DTS:ObjectName="Dim_Disease"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -1398,8 +2550,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_Disease\CSV_Disease.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[CSV_Disease]"
-                      connectionManagerRefId="Package.ConnectionManagers[CSV_Disease]"
+                      connectionManagerID="Package.ConnectionManagers[CSV_Disease01]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV_Disease01]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -1779,8 +2931,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_Disease\Dim_Disease.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2081,6 +3233,8 @@
           DTS:ObjectName="Dim_Insurance"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -2107,8 +3261,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_Insurance\CSV_Insurance.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[CSV_Insurance]"
-                      connectionManagerRefId="Package.ConnectionManagers[CSV_Insurance]"
+                      connectionManagerID="Package.ConnectionManagers[CSV_Insurance01]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV_Insurance01]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -2484,8 +3638,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_Insurance\Dim_Insurance.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2778,6 +3932,8 @@
           DTS:ObjectName="Dim_Medical"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -2804,8 +3960,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_Medical\CSV_Medical.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[CSV_Medical]"
-                      connectionManagerRefId="Package.ConnectionManagers[CSV_Medical]"
+                      connectionManagerID="Package.ConnectionManagers[CSV_Medical01]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV_Medical01]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -3156,8 +4312,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_Medical\Dim_Medical.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3410,6 +4566,8 @@
           DTS:ObjectName="Dim_MedicalDetail"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -3436,8 +4594,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_MedicalDetail\CSV_MedicalDetail.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerID="Package.ConnectionManagers[CSV_MedicalDetail]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV_MedicalDetail]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -3770,8 +4928,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_MedicalDetail\Dim_MedicalDetail.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4024,6 +5182,8 @@
           DTS:ObjectName="Dim_Patient"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -4050,8 +5210,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_Patient\CSV_Patient.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[CSV_Patient]"
-                      connectionManagerRefId="Package.ConnectionManagers[CSV_Patient]"
+                      connectionManagerID="Package.ConnectionManagers[CSV_Patient01]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV_Patient01]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -4875,8 +6035,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Stagging from CSV File\Dim_Patient\Dim_Patient.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -5538,8 +6698,742 @@
       DTS:From="Package\Load Stagging from CSV File"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Adding PK" />
+      DTS:To="Package\Adding FK" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{6529AADB-2810-4628-8761-7B7999525073}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{CCF2AA83-83B2-4EB2-A062-6DC07E9E334D}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Send Error Mail"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{23403967-453B-42C2-A4DC-304E85C414DD}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send Error Mail">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_2a138cc545a549d587357f80041a7213"
+              VSTAMajorVersion="15"
+              VSTAMinorVersion="0"
+              Language="VisualBasic"
+              ReadOnlyVariables="User::SMTPPassword,User::SMTPUsername">
+              <ProjectItem
+                Name="ScriptMain.vb"
+                Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
+'The Script Task allows you to perform virtually any operation that can be accomplished in
+'a .Net application within the context of an Integration Services control flow. 
+
+'Expand the other regions which have "Help" prefixes for examples of specific ways to use
+'Integration Services features within this script task.
+#End Region
+
+
+#Region "Imports"
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+Imports System.Net
+Imports System.Net.Mail
+
+#End Region
+
+'ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+'or parent of this class.
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute()> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+#Region "Help:  Using Integration Services variables and parameters in a script"
+    'To use a variable in this script, first ensure that the variable has been added to 
+    'either the list contained in the ReadOnlyVariables property or the list contained in 
+    'the ReadWriteVariables property of this script task, according to whether or not your
+    'code needs to write to the variable.  To add the variable, save this script, close this instance of
+    'Visual Studio, and update the ReadOnlyVariables and 
+    'ReadWriteVariables properties in the Script Transformation Editor window.
+    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
+
+    'Example of reading from a variable:
+    ' startTime = Dts.Variables("System::StartTime").Value
+
+    'Example of writing to a variable:
+    ' Dts.Variables("User::myStringVariable").Value = "new value"
+
+    'Example of reading from a package parameter:
+    ' batchId = Dts.Variables("$Package::batchId").Value
+
+    'Example of reading from a project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").Value
+
+    'Example of reading from a sensitive project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").GetSensitiveValue()
+#End Region
+
+#Region "Help:  Firing Integration Services events from a script"
+    'This script task can fire events for logging purposes.
+
+    'Example of firing an error event:
+    ' Dts.Events.FireError(18, "Process Values", "Bad value", "", 0)
+
+    'Example of firing an information event:
+    ' Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, fireAgain)
+
+    'Example of firing a warning event:
+    ' Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0)
+#End Region
+
+#Region "Help:  Using Integration Services connection managers in a script"
+    'Some types of connection managers can be used in this script task.  See the topic 
+    '"Working with Connection Managers Programatically" for details.
+
+    'Example of using an ADO.Net connection manager:
+    ' Dim rawConnection As Object = Dts.Connections("Sales DB").AcquireConnection(Dts.Transaction)
+    ' Dim myADONETConnection As SqlConnection = CType(rawConnection, SqlConnection)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Sales DB").ReleaseConnection(rawConnection)
+
+    'Example of using a File connection manager
+    ' Dim rawConnection As Object = Dts.Connections("Prices.zip").AcquireConnection(Dts.Transaction)
+    ' Dim filePath As String = CType(rawConnection, String)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Prices.zip").ReleaseConnection(rawConnection)
+#End Region
+
+    'This method is called when this script task executes in the control flow.
+    'Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+    'To open Help, press F1.
+
+    Public Sub Main()
+        Dim Smtp_Client As New SmtpClient
+        Dim e_mail As New MailMessage()
+        Smtp_Client.UseDefaultCredentials = False
+        Dim SMTPUsername As String = Dts.Variables("User::SMTPUsername").Value.ToString()
+        Dim SMTPPassword As String = Dts.Variables("User::SMTPPassword").Value.ToString()
+        Smtp_Client.Credentials = New NetworkCredential(SMTPUsername, SMTPPassword)
+        Smtp_Client.Port = CInt(Dts.Variables("User::SMTPPort").Value)
+        Smtp_Client.EnableSsl = True
+        Smtp_Client.Host = Dts.Variables("User::SMTPServer").Value.ToString()
+
+        e_mail = New MailMessage()
+        e_mail.From = New MailAddress(Dts.Variables("User::From").Value.ToString())
+        e_mail.To.Add(Dts.Variables("User::To").Value.ToString())
+        e_mail.Subject = Dts.Variables("User::Subject").Value.ToString()
+        e_mail.IsBodyHtml = False
+        e_mail.Body = Dts.Variables("User::MessageBody").Value.ToString()
+        Smtp_Client.Send(e_mail)
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+#Region "ScriptResults declaration"
+    'This enum provides a convenient shorthand within the scope of this class for setting the
+    'result of the script.
+
+    'This code was generated automatically.
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+#End Region
+
+End Class]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\AssemblyInfo.vb"
+                Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_2a138cc545a549d587357f80041a7213")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_2a138cc545a549d587357f80041a7213")> 
+<Assembly: AssemblyCopyright("Copyright @  2021")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("02c84b3c-bf46-4896-9f09-411c6e938223")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\Settings.Designer.vb"
+                Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_2a138cc545a549d587357f80041a7213</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_2a138cc545a549d587357f80041a7213</msb:DisplayName>
+    <msb:ProjectId>{ADE56BC8-5D47-4327-80B1-8F5F2FB6E8C4}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_2a138cc545a549d587357f80041a7213.vbproj" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="ST_2a138cc545a549d587357f80041a7213.vbproj"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9AD8DEBA-5A0C-4793-A8FB-155C13B730D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>ST_2a138cc545a549d587357f80041a7213</RootNamespace>
+    <AssemblyName>ST_2a138cc545a549d587357f80041a7213</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\Resources.resx"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\Resources.Designer.vb"
+                Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace]]></ProjectItem>
+              <BinaryItem
+                Name="ST_2a138cc545a549d587357f80041a7213.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDABt+HGEAAAAAAAAAAOAAIiALAVAAAB4AAAAIAAAAAAAA/jsA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKw7AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAABBwAAAAgAAAAHgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAgAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADg
+OwAAAAAAAEgAAAACAAUAlCMAAGAXAAABAAAAAAAAAPQ6AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqQnMiAAAKKCYAAAqACAAABCoeAignAAAKKgAAGzABAD8A
+AAAAAAAAfgcAAAQtMn4IAAAEKCYAAAooKAAACn4HAAAELRxzDQAABoAHAAAE3hB+CAAABCgmAAAK
+KCkAAArcfgcAAAQqAAEQAAACAB0ADCkAEAAAAAAeAigqAAAKKhMwBABuAQAAAQAAEXMrAAAKcywA
+AAoKJRZvLQAACgIoLgAACm8vAAAKcjMAAHBvMAAACm8xAAAKbzIAAAoLAiguAAAKby8AAApyWQAA
+cG8wAAAKbzEAAApvMgAACgwlBwhzMwAACm80AAAKJQIoLgAACm8vAAAKcn8AAHBvMAAACm8xAAAK
+KDUAAApvNgAACiUXbzcAAAolAiguAAAKby8AAApynQAAcG8wAAAKbzEAAApvMgAACm84AAAKcywA
+AAoKBgIoLgAACm8vAAAKcr8AAHBvMAAACm8xAAAKbzIAAApzOQAACm86AAAKBm87AAAKAiguAAAK
+by8AAApy1QAAcG8wAAAKbzEAAApvMgAACm88AAAKBgIoLgAACm8vAAAKcucAAHBvMAAACm8xAAAK
+bzIAAApvPQAACgYWbz4AAAoGAiguAAAKby8AAApyAwEAcG8wAAAKbzEAAApvMgAACm8/AAAKBm9A
+AAAKAiguAAAKFm9BAAAKKjYCAygmAAAKKEIAAAoqHgIoQwAACiou0AgAAAIoIwAACioeAigyAAAK
+KhMwAQAUAAAAAgAAEQKMBQAAGy0IKAEAACsKKwICCgYqIgP+FQUAABsqAAAAEzACACgAAAADAAAR
+AntFAAAKb0YAAAoKBowIAAAbLRIoAgAAKwoCe0UAAAoGb0cAAAoGKkoCKCIAAAoCc0gAAAp9RQAA
+CioAQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAzMTkAAAAABQBsAAAAPAgAACN+AACoCAAA/AkAACNT
+dHJpbmdzAAAAAKQSAAAoAQAAI1VTAMwTAAAQAAAAI0dVSUQAAADcEwAAhAMAACNCbG9iAAAAAAAA
+AAIAAAFXHaIJCQ8AAAD6ATMAFgAAAQAAADQAAAAKAAAADAAAABkAAAAEAAAASAAAAAIAAAA3AAAA
+AwAAAAQAAAAIAAAACQAAAAgAAAABAAAABQAAAAEAAAADAAAAAwAAAAIAAAAAAE0FAQAAAAAABgBq
+A/4HBgAPBP4HBgBBAj8HDwCkCAAABgCCAiAGBgBNAyAGBgD2AyAGBgCKAyAGBgCjAyAGBgDJAiAG
+BgC+A5sFBgBuArgHBgDqAbgHBgAVAyAGBgDkAmkECgANAtkGCgDVAScFCgBVAicFDgCtAY4HDgAP
+B1IHBgD9Aj8HDgCZAtcHDgCxArEABgBICZsFDgD1Bo4HDgAyA7EABgBgAZsFDgABAOsECgD4AbAF
+BgC/Bh4IBgBPBgsGCgC9AfYFBgAkAj8HEgDUA7AEEgCRAbAEBgCMBJsFCgAEAT0FBgCrBZsFBgAZ
+AZsFBgDyCSAGBgAJCf4HBgA3B1gECgCECT0FEgAVBbAEFgC3CD0BFgAQAT0BCgDZBGUJCgChCWUJ
+DgD9CNcHCgAgCT0FCgAyBj0FBgAgB5sFAAAAAE8AAAAAAAEAAQAAAAAA6AW+CU0AAQABAAAAAAAN
+B74JUQABAAIAAAEQAFsJvglhAAEAAwAAAAAAYAgvCGEABQAIAAABEADBCCsAgQAHAAwAAQAAAM0F
+KwCNAAkADwAFAQAAgAcAAGEACQARAAUBAAAQAAAAYQAJABgAAgEAADQJAACZAAoAGgAxAIQGHAEx
+AFsGJAExAG8GLAExAJ0GNAERABgHPAERAIUBQAERAC0ERAERAEIJSAEhALQJ2gAGBqAASwFWgBgJ
+TgFWgGUBTgFQIAAAAAAGGCoHBgABAFggAAAAAAYYKgcGAAEAYCAAAAAAERgwB1IBAQCKIAAAAAAT
+CAAHVgEBAJYgAAAAABMI2AVbAQEAoiAAAAAAEwjxBmABAQCuIAAAAAATCHAHZQEBALogAAAAAAMY
+KgcGAAEAwiAAAAAAFgi7BmoBAQDuIAAAAAAWCG0BbwEBAPUgAAAAABYIeQF0AQEA/SAAAAAAERgw
+B1IBAgAOIQAAAAAGGCoHBgACABghAAAAABYINQR6AQIAdCEAAAAABhgqBwYAAgB8IQAAAAAGANMF
+BgACAPYiAAAAAMYC9giyAAIABCMAAAAAxgL4ALcAAwAMIwAAAACDAF0BfwEDABgjAAAAAMYCgwSO
+AAMAICMAAAAAEQCNAIQBAwBAIwAAAAABAHkAjAEEALogAAAAAAYYKgcGAAUATCMAAAAAAwjfAEoA
+BQCAIwAAAAAGGCoHBgAFAAAAAQBSBAAAAQBZBgAAAQDvAAAAAQDvAAkAKgcBABEAKgcGABkAKgcK
+ACkAKgcQADEAKgcQADkAKgcQAEEAKgcQAEkAKgcQAFEAKgcQAFkAKgcVAGEAKgcVAGkAKgcQAHEA
+KgcQAHkAKgcQAIEAKgcaAJEAKgcgAKkAKgcGALEAKgcGALkAKgcGANEAKgcmAOkAKgcQAAkBKgcG
+ABEBKgcGAJkAKgcGAKEAKgcGAAwAKgcGABQAKgcGABwAKgcGACQAKgcGAAwA3wBKABQA3wBKABwA
+3wBKACQA3wBKAMEAKgcGANkAKwFPANkA7glXAPEAKgddAEkBSQRlAAEBKgcGAFEB+gZqAFEBcAlq
+ABkBKgcGAFkBKgcGACkBKgcGAFkB3AgVABkBLAl3AGEBswh9AGkBkgWDAHEBNQSKAMEAgwSOAHkB
+KgcaAFkBzAiSAIkBzwaZAFkBjwkBAFkBhAUVAFkBmAkQAJEBKgcQACkBogWeACkBSAalAJkBxwAQ
+ACkBTwkQACkBdQUVACkB5QkQAFkBywCrAGEBdQkBAMEA9giyAMEA+AC3AKEB0ADDADQAtAnaADwA
+NQRKADwAPwTxADwAKgcGAAgALAASAQgAMAAXASkAqwA+Ay4ACwC8AS4AEwDFAS4AGwDkAS4AIwDt
+AS4AKwAWAi4AMwAWAi4AOwDtAS4AQwAcAi4ASwAWAi4AUwAzAi4AWwAWAi4AYwA5Ai4AawBjAi4A
+cwBwAkAAiwAXAUAAgwC6AkMAewDDAkMAgwC6AkkAqwBPA2MAewDDAmMAgwC6AmkAqwBjA4AAiwAX
+AYMAkwAXAYMAmwAXAYMAewDDAokAqwBwA6AAiwAXAakAgwDkAcAAiwAXAckAgwDkAeAAiwAXAeMA
+uwAXAeMAUwAWAukAswAXAQMBgwC6AgMBowDcAiMBgwC6AiMBWwAWAiACgwC6AiACiwAXAUACgwC6
+AkACiwAXAWACgwC6AmACiwAXAYACgwC6AoACiwAXAaACiwAXAcACiwAXAeACiwAXAeACgwC6AgAD
+iwAXASADiwAXASADgwC6Am8AuwDOAAQAAQAFAAUABgAHAAkACAAAAA8HlAEAAOoFmQEAAPUGngEA
+AIIHowEAAL8GqAEAAIkBrQEAAFIEsgEAAOMAtwECAAQAAwACAAUABQACAAYABwACAAcACQACAAkA
+CwACAAoADQABAAsADQACAA4ADwACABgAEQAuADUAPABDAMAA0wDiAOkABIAAAAEAAAAAAAAAAAAA
+AAAAKwAAAAQAAAAAAAAAAAAAAPcAqAAAAAAABAAAAAAAAAAAAAAA9wCbBQAAAAAKAAAAAAAAAAAA
+AAAAAbEAAAAAAA8AAAAAAAAAAAAAAAkBkQQAAAAADwAAAAAAAAAAAAAACQFYAAAAAAAAAAAAAQAA
+AGwIAAAIAAQACQAEAAoABwAAABAAEgB3AAAAEAArAHcAAAAAAC0AdwCJAMkAiQDsAAAAAAAAQ29u
+dGV4dFZhbHVlYDEAVGhyZWFkU2FmZU9iamVjdFByb3ZpZGVyYDEAU1RfMmExMzhjYzU0NWE1NDlk
+NTg3MzU3ZjgwMDQxYTcyMTMAPE1vZHVsZT4ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRT
+AFQARGlzcG9zZV9fSW5zdGFuY2VfXwBDcmVhdGVfX0luc3RhbmNlX18AdmFsdWVfXwBtc2Nvcmxp
+YgBNaWNyb3NvZnQuVmlzdWFsQmFzaWMAQWRkAFNlbmQAQ3JlYXRlSW5zdGFuY2UAZ2V0X0dldElu
+c3RhbmNlAGluc3RhbmNlAEdldEhhc2hDb2RlAE1haWxNZXNzYWdlAFZhcmlhYmxlAFJ1bnRpbWVU
+eXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRp
+bWUAR2V0VHlwZQBGYWlsdXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAF9yZXNDdWx0dXJlAFZT
+VEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvbkJhc2UAQXBwbGljYXRpb25TZXR0
+aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAR3VpZEF0dHJpYnV0ZQBIZWxwS2V5d29yZEF0
+dHJpYnV0ZQBHZW5lcmF0ZWRDb2RlQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1
+dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQ29tVmlzaWJs
+ZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAFN0YW5kYXJkTW9kdWxlQXR0cmlidXRl
+AEhpZGVNb2R1bGVOYW1lQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdl
+dEZyYW1ld29ya0F0dHJpYnV0ZQBEZWJ1Z2dlckhpZGRlbkF0dHJpYnV0ZQBBc3NlbWJseUZpbGVW
+ZXJzaW9uQXR0cmlidXRlAE15R3JvdXBDb2xsZWN0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3Jp
+cHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVBy
+b2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAQ0xTQ29tcGxpYW50QXR0
+cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlB
+dHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAbV9WYWx1ZQBnZXRfVmFsdWUA
+c2V0X1ZhbHVlAEdldE9iamVjdFZhbHVlAFN5c3RlbS5UaHJlYWRpbmcAU3lzdGVtLlJ1bnRpbWUu
+VmVyc2lvbmluZwBUb1N0cmluZwBNYXRoAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBN
+aWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAE5ldHdvcmtDcmVkZW50aWFs
+AE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5NeVNlcnZpY2VzLkludGVybmFsAFNjcmlwdE9iamVjdE1v
+ZGVsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTeXN0ZW0uTmV0Lk1haWwAU1RfMmExMzhjYzU0NWE1
+NDlkNTg3MzU3ZjgwMDQxYTcyMTMuZGxsAHNldF9Jc0JvZHlIdG1sAHNldF9FbmFibGVTc2wAZ2V0
+X0l0ZW0AU3lzdGVtAHNldF9Gcm9tAEVudW0AU3lzdGVtLkNvbXBvbmVudE1vZGVsLkRlc2lnbgBT
+Y3JpcHRNYWluAGdldF9BcHBsaWNhdGlvbgBNeUFwcGxpY2F0aW9uAFN5c3RlbS5Db25maWd1cmF0
+aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAE1haWxBZGRyZXNzQ29s
+bGVjdGlvbgBnZXRfVG8AQ3VsdHVyZUluZm8AbV9BcHBPYmplY3RQcm92aWRlcgBtX1VzZXJPYmpl
+Y3RQcm92aWRlcgBtX0NvbXB1dGVyT2JqZWN0UHJvdmlkZXIAbV9NeVdlYlNlcnZpY2VzT2JqZWN0
+UHJvdmlkZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgBUb0ludGVnZXIAU3lzdGVtLkNvZGVEb20uQ29t
+cGlsZXIAZ2V0X1VzZXIARW50ZXIAZ2V0X0NvbXB1dGVyAE15Q29tcHV0ZXIAX3Jlc01ncgBBY3Rp
+dmF0b3IALmN0b3IALmNjdG9yAE1vbml0b3IAU3lzdGVtLkRpYWdub3N0aWNzAE1pY3Jvc29mdC5W
+aXN1YWxCYXNpYy5EZXZpY2VzAGdldF9XZWJTZXJ2aWNlcwBNeVdlYlNlcnZpY2VzAE1pY3Jvc29m
+dC5WaXN1YWxCYXNpYy5BcHBsaWNhdGlvblNlcnZpY2VzAFN5c3RlbS5SdW50aW1lLkludGVyb3BT
+ZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUnVu
+dGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfMmExMzhjYzU0NWE1NDlk
+NTg3MzU3ZjgwMDQxYTcyMTMuTXkuUmVzb3VyY2VzAE15UmVzb3VyY2VzAFNUXzJhMTM4Y2M1NDVh
+NTQ5ZDU4NzM1N2Y4MDA0MWE3MjEzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMA
+Z2V0X1ZhcmlhYmxlcwBNeVNldHRpbmdzAHNldF9DcmVkZW50aWFscwBzZXRfVXNlRGVmYXVsdENy
+ZWRlbnRpYWxzAEVxdWFscwBDb252ZXJzaW9ucwBSdW50aW1lSGVscGVycwBTdWNjZXNzAE1haWxB
+ZGRyZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBtX1N5bmNPYmplY3QAc2V0X1N1YmplY3QATXlQ
+cm9qZWN0AFN5c3RlbS5OZXQARXhpdABzZXRfVGFza1Jlc3VsdABTbXRwQ2xpZW50AHNldF9Qb3J0
+AHNldF9Ib3N0AElDcmVkZW50aWFsc0J5SG9zdABtX0NvbnRleHQAU1RfMmExMzhjYzU0NWE1NDlk
+NTg3MzU3ZjgwMDQxYTcyMTMuTXkAc2V0X0JvZHkAZ2V0X0Fzc2VtYmx5AAAAMU0AeQAuAFIAZQBz
+AG8AdQByAGMAZQBzAC4ATQB5AFIAZQBzAG8AdQByAGMAZQBzAAAlVQBzAGUAcgA6ADoAUwBNAFQA
+UABVAHMAZQByAG4AYQBtAGUAACVVAHMAZQByADoAOgBTAE0AVABQAFAAYQBzAHMAdwBvAHIAZAAA
+HVUAcwBlAHIAOgA6AFMATQBUAFAAUABvAHIAdAAAIVUAcwBlAHIAOgA6AFMATQBUAFAAUwBlAHIA
+dgBlAHIAABVVAHMAZQByADoAOgBGAHIAbwBtAAARVQBzAGUAcgA6ADoAVABvAAAbVQBzAGUAcgA6
+ADoAUwB1AGIAagBlAGMAdAAAI1UAcwBlAHIAOgA6AE0AZQBzAHMAYQBnAGUAQgBvAGQAeQAAAJXK
+Rt00rrNMjy2htGjAG/gABCABAQgDIAABBSABARERBCABAQ4EIAEBAgUgAgEODgUgAQERRQcgBAEO
+Dg4OBhUSJAESDAYVEiQBEggGFRIkARJlBhUSJAESIAQgABMABwABEm0RgJ0FIAASgKEHIAIBDhKA
+oQQAARwcBAABARwHBwMSgJUODgUgABKAsQUgABKAtQYgARKAuRwDIAAcAyAADgYgAQESgMEEAAEI
+HAYgAQESgMkFIAASgM0GIAEBEoCVBCABAhwDIAAIBAcBHgACHgAFEAEAHgAECgEeAAQHARMABhUS
+JAETAAcGFRJxARMABhUScQETAAITAAQKARMABSABARMACLd6XFYZNOCJCLA/X38R1Qo6CImEXc2A
+gMyRBAAAAAAEAQAAAAcGFRIkARIMBwYVEiQBEggHBhUSJAESZQcGFRIkARIgAwYSeQMGEn0DBhIY
+AgYcAgYIAwYRKAMAAAEEAAASDAQAABIIBAAAEmUEAAASIAQAABJ5BAAAEn0FAAEBEn0EAAASGAQg
+ABJtBxABAR4AHgAHMAEBARAeAAQIABIMBAgAEggECAASZQQIABIgBAgAEnkECAASfQQIABIYBCgA
+EwAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NU
+XzJhMTM4Y2M1NDVhNTQ5ZDU4NzM1N2Y4MDA0MWE3MjEzAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAg
+IDIwMjEAAAUBAAEAACkBACQwMmM4NGIzYy1iZjQ2LTQ4OTYtOWYwOS00MTFjNmU5MzgyMjMAAAwB
+AAcxLjAuMC4wAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rp
+c3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwgBAAEAAAAAABgBAApNeVRlbXBsYXRlCDExLjAu
+MC4wAABhAQA0U3lzdGVtLldlYi5TZXJ2aWNlcy5Qcm90b2NvbHMuU29hcEh0dHBDbGllbnRQcm90
+b2NvbBJDcmVhdGVfX0luc3RhbmNlX18TRGlzcG9zZV9fSW5zdGFuY2VfXwAAABABAAtNeS5Db21w
+dXRlcgAAEwEADk15LkFwcGxpY2F0aW9uAAAMAQAHTXkuVXNlcgAAEwEADk15LldlYlNlcnZpY2Vz
+AAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29y
+bGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3
+YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAA
+AAAAAFBBRFBBRFC0AAAA1DsAAAAAAAAAAAAA7jsAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOA7
+AAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA
+EAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABY
+QAAA7AMAAAAAAAAAAAAA7AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E
+7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBW
+AGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAA
+AACwBEwDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAACgDAAABADAAMAAwADAAMAA0
+AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5AE4A
+YQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAUwBU
+AF8AMgBhADEAMwA4AGMAYwA1ADQANQBhADUANAA5AGQANQA4ADcAMwA1ADcAZgA4ADAAMAA0ADEA
+YQA3ADIAMQAzAAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADAALgAw
+AAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwAyAGEAMQAzADgAYwBjADUA
+NAA1AGEANQA0ADkAZAA1ADgANwAzADUANwBmADgAMAAwADQAMQBhADcAMgAxADMALgBkAGwAbAAA
+AEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0ACAA
+QAAgACAAMgAwADIAMQAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBzAAAAAAAA
+AAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAVABfADIAYQAxADMA
+OABjAGMANQA0ADUAYQA1ADQAOQBkADUAOAA3ADMANQA3AGYAOAAwADAANAAxAGEANwAyADEAMwAu
+AGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAFQAXwAyAGEAMQAzADgA
+YwBjADUANAA1AGEANQA0ADkAZAA1ADgANwAzADUANwBmADgAMAAwADQAMQBhADcAMgAxADMAAAA0
+AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAIAAEA
+QQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAAA8AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
+            </ScriptProject>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -5553,20 +7447,20 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="128.5,42"
-          Id="Package\Adding PK"
+          Size="130,42"
+          Id="Package\Adding FK"
           TopLeft="337.857142857143,663.392853971926" />
         <NodeLayout
           Size="150,42"
           Id="Package\Deleting before load\Before Loading"
           TopLeft="22.3075396825394,91.8224203104613" />
         <NodeLayout
-          Size="126,42"
-          Id="Package\Deleting before load\Delete PK"
+          Size="128,42"
+          Id="Package\Deleting before load\Delete FK"
           TopLeft="39.5,11.6904753525815" />
         <EdgeLayout
           Id="Package\Deleting before load.PrecedenceConstraints[Constraint]"
-          TopLeft="99.9037698412697,53.6904753525815">
+          TopLeft="100.40376984127,53.6904753525815">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5592,17 +7486,17 @@
           PanelSize="205,189"
           Size="205,232"
           Id="Package\Deleting before load"
-          TopLeft="77.8571428571428,77.6190475421766" />
+          TopLeft="124.857142857143,76.6190475421766" />
         <NodeLayout
           Size="145,42"
           Id="Package\Load Stagging from CSV File\Dim Symptom"
           TopLeft="50.5,111.249998789281" />
         <NodeLayout
-          Size="141.5,42"
+          Size="142,42"
           Id="Package\Load Stagging from CSV File\Dim_Disease"
           TopLeft="420.722222222222,29.6574066044464" />
         <NodeLayout
-          Size="149.5,42"
+          Size="150,42"
           Id="Package\Load Stagging from CSV File\Dim_Insurance"
           TopLeft="222,110.291665905259" />
         <NodeLayout
@@ -5614,42 +7508,42 @@
           Id="Package\Load Stagging from CSV File\Dim_MedicalDetail"
           TopLeft="418.285714285714,112.422618370001" />
         <NodeLayout
-          Size="136.5,42"
+          Size="136,42"
           Id="Package\Load Stagging from CSV File\Dim_Patient"
           TopLeft="229.277777777778,30.2962956565581" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="636.5,178"
-          Size="636.5,221"
+          PanelSize="636,178"
+          Size="636,221"
           Id="Package\Load Stagging from CSV File"
           TopLeft="82.5873015873017,392.75859659904" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="180.357142857143,309.619047542177">
+          TopLeft="227.357142857143,308.619047542177">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="220.480158730159,83.1395490568632"
+              EndConnector="173.230158730159,84.1395490568634"
               Start="0,0"
-              End="220.480158730159,75.6395490568632">
+              End="173.230158730159,76.6395490568634">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5697745284316" />
+                    End="0,38.0697745284317" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.5697745284316"
-                    Point2="0,41.5697745284316"
-                    Point3="4,41.5697745284316" />
+                    Point1="0,38.0697745284317"
+                    Point2="0,42.0697745284317"
+                    Point3="4,42.0697745284317" />
                   <mssgle:LineSegment
-                    End="216.480158730159,41.5697745284316" />
+                    End="169.230158730159,42.0697745284317" />
                   <mssgle:CubicBezierSegment
-                    Point1="216.480158730159,41.5697745284316"
-                    Point2="220.480158730159,41.5697745284316"
-                    Point3="220.480158730159,45.5697745284316" />
+                    Point1="169.230158730159,42.0697745284317"
+                    Point2="173.230158730159,42.0697745284317"
+                    Point3="173.230158730159,46.0697745284317" />
                   <mssgle:LineSegment
-                    End="220.480158730159,75.6395490568632" />
+                    End="173.230158730159,76.6395490568634" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5660,7 +7554,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="401.472222222222,613.75859659904">
+          TopLeft="401.722222222222,613.75859659904">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5683,17 +7577,29 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package.EventHandlers[OnError]\Send Error Mail"
+          TopLeft="360,144" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Load Stagging from CSV File\Dim Symptom">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="98.5,42"
+          Size="98,42"
           Id="Package\Load Stagging from CSV File\Dim Symptom\Sort"
           TopLeft="362.666666666667,168.666666666667" />
         <NodeLayout
-          Size="150.5,42"
+          Size="150,42"
           Id="Package\Load Stagging from CSV File\Dim Symptom\CSV_Symptom"
           TopLeft="138.5,68.9166665429042" />
         <NodeLayout
@@ -5802,21 +7708,21 @@
     design-time-name="Package\Load Stagging from CSV File\Dim_Disease">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\Load Stagging from CSV File\Dim_Disease\Data Conversion"
           TopLeft="590.769230769231,160.769230769231" />
         <NodeLayout
-          Size="98.5,42"
+          Size="98,42"
           Id="Package\Load Stagging from CSV File\Dim_Disease\Sort"
           TopLeft="426.923076923077,162.307692307692" />
         <NodeLayout
-          Size="144.5,42"
+          Size="144,42"
           Id="Package\Load Stagging from CSV File\Dim_Disease\CSV_Disease"
           TopLeft="236,91" />
         <NodeLayout
-          Size="141.5,42"
+          Size="142,42"
           Id="Package\Load Stagging from CSV File\Dim_Disease\Dim_Disease"
           TopLeft="686.923076923077,257.692307692308" />
         <EdgeLayout
@@ -5838,9 +7744,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5874,9 +7778,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5910,9 +7812,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5941,15 +7841,15 @@
           Id="Package\Load Stagging from CSV File\Dim_Insurance\Data Conversion"
           TopLeft="609,223" />
         <NodeLayout
-          Size="98.5,42"
+          Size="98,42"
           Id="Package\Load Stagging from CSV File\Dim_Insurance\Sort"
           TopLeft="458,162" />
         <NodeLayout
-          Size="152.5,42"
+          Size="152,42"
           Id="Package\Load Stagging from CSV File\Dim_Insurance\CSV_Insurance"
           TopLeft="250,90" />
         <NodeLayout
-          Size="149.5,42"
+          Size="150,42"
           Id="Package\Load Stagging from CSV File\Dim_Insurance\Dim_Insurance"
           TopLeft="858,223" />
         <EdgeLayout
@@ -6064,7 +7964,7 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="98.5,42"
+          Size="98,42"
           Id="Package\Load Stagging from CSV File\Dim_Medical\Sort"
           TopLeft="247,116" />
         <NodeLayout
@@ -6072,7 +7972,7 @@
           Id="Package\Load Stagging from CSV File\Dim_Medical\Dim_Medical"
           TopLeft="549.5,258.214285714286" />
         <NodeLayout
-          Size="142.5,42"
+          Size="142,42"
           Id="Package\Load Stagging from CSV File\Dim_Medical\CSV_Medical"
           TopLeft="117,36" />
         <NodeLayout
@@ -6207,11 +8107,11 @@
           Id="Package\Load Stagging from CSV File\Dim_MedicalDetail\Data Conversion"
           TopLeft="388,179" />
         <NodeLayout
-          Size="98.5,42"
+          Size="98,42"
           Id="Package\Load Stagging from CSV File\Dim_MedicalDetail\Sort"
           TopLeft="247,116" />
         <NodeLayout
-          Size="169.5,42"
+          Size="170,42"
           Id="Package\Load Stagging from CSV File\Dim_MedicalDetail\CSV_MedicalDetail"
           TopLeft="117,35" />
         <NodeLayout
@@ -6350,11 +8250,11 @@
           Id="Package\Load Stagging from CSV File\Dim_Patient\CSV_Patient"
           TopLeft="140,41" />
         <NodeLayout
-          Size="136.5,42"
+          Size="136,42"
           Id="Package\Load Stagging from CSV File\Dim_Patient\Dim_Patient"
           TopLeft="557.142857142857,235.714285714286" />
         <NodeLayout
-          Size="98.5,42"
+          Size="98,42"
           Id="Package\Load Stagging from CSV File\Dim_Patient\Sort"
           TopLeft="469.285714285714,64.2857142857143" />
         <EdgeLayout

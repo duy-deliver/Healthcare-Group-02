@@ -11,11 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{4073E92C-A0E0-4AB2-9F1B-83A53929B3C9}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{131E2AC1-D5C8-4E38-AD7A-CD9562F35058}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9B4C0023-ADF9-449E-87F5-ADB8AFEDD162}"
+      DTS:ObjectName="DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-5EO5NDK\MSSQLSERVER01;Initial Catalog=Pipeline_Group02;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
       DTS:CreationName="OLEDB"
@@ -45,22 +57,90 @@
       DTS:ObjectName="s1.hank0720">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="uid=hank0720;Dsn=s1;">
+          DTS:ConnectionString="uid=hank0720;Dsn=s1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{21A71905-022E-4313-943F-E97718E8BD1D}"
+      DTS:ObjectName="SMTP Connection Manager">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=TSBClient;UseWindowsAuthentication=False;EnableSsl=False;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Snowflake.hank0720]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{E8A5F8A3-6A3C-4DA9-9942-E6AAD5980402}"
+      DTS:ObjectName="Snowflake.hank0720">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="uid=hank0720;Dsn=Snowflake;">
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXXRDRj3j3Eyim/gdkIvGZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACee0rpEVSHm3vq2Ur9R0J2GXA+4xfUm+p+fXDOvXAUpgAAAAAOgAAAAAIAACAAAAAo4a8GKRcNG0udjppl3kIy7FERp1pLgiJI3LK+djtkgiAAAAAiSGkBj5afsgl4ZQJV1ULPFPqZCDARknTQy+bHl7t0t0AAAABIvEZlhN3lL7z9khNebvxr205fczSjGZUkTFlRGhTR9VlZLxYrfEnIIrE25SWF70m1s5xPllL0Mz63vrr0hqmB</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGI2/OuDfsESDOI8xsjCWJQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADEci58Ocm3jyofIdjtz2orkti/nHkCJLsl2PbM+LqAQAAAAAAOgAAAAAIAACAAAAC4FpdSG+DCRKFyL5sLQc4m/oNgBJpamw67B9Qu/YqjhiAAAADy/YP//AS1cp+PA/p5rPVTLX+ZrsaAUHXBXhBIrL3Fh0AAAAD7y7c52m8VJ8ifQRARIY/1wxVNaRz+uIDfBTVft78hUAWfITwXnq6QGd4ajr7mZ8q018jQTAqdLnH1BKeoSzaC</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{7D3360D0-0AAA-4FEA-8429-EB92E7DEC171}"
+      DTS:ObjectName="EmailFrom">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">huyanh.ha.97@gmail.com</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{0BC51A2E-61AE-4200-9403-EFC137483469}"
+      DTS:ObjectName="EmailTo">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">aha2@depaul.edu</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{4DDE9DF3-44E4-45AC-9DCE-6EA0BB22AB78}"
+      DTS:ObjectName="Environment">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Prod</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{33A49E9B-7FD6-456B-81B3-DB1B071CE043}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTPPassword">
+      <DTS:VariableValue
+        DTS:DataType="8">password123</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{502387CF-5929-4658-B716-994088292B26}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTPUsername">
+      <DTS:VariableValue
+        DTS:DataType="8">huyanh.ha.97@gmail.com</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Delete before Loading to Snow"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{DDEE2B3A-CF05-49EF-8597-306C24C9611F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -70,7 +150,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{BA906490-6861-402E-860D-A99FF486DDFF}"
+          SQLTask:Connection="{E8A5F8A3-6A3C-4DA9-9942-E6AAD5980402}"
           SQLTask:SqlStatementSource="DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Disease;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Patient;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Symptom;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Insurance;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Medical;&#xA;&#xA;DELETE FROM PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_MedicalDetail;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -94,6 +174,84 @@
           DTS:ObjectName="Disease"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Sequence Container\Disease.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{04430F2A-2945-473D-B05E-DADE628DBC7D}"
+              DTS:EventID="729863679"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{7CD7F2D9-2A70-4BD5-B262-634718A2F75A}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Sequence Container\Disease.EventHandlers[OnError]\Script Task"
+                  DTS:CreationName="Microsoft.ScriptTask"
+                  DTS:Description="Script Task"
+                  DTS:DTSID="{86B50AC3-B373-4C67-9F44-0B9506D43721}"
+                  DTS:ExecutableType="Microsoft.ScriptTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Script Task">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <ScriptProject
+                      Name="ST_8260f3090aa64ff28f3ad4fe769a209b"
+                      VSTAMajorVersion="15"
+                      VSTAMinorVersion="0"
+                      Language="CSharp" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:refId="Package\Sequence Container\Disease.EventHandlers[OnError]\Send Mail Task"
+                  DTS:CreationName="Microsoft.SendMailTask"
+                  DTS:Description="Send Mail Task"
+                  DTS:DTSID="{87D29E60-C326-4C9C-88CC-2B814E9B0EF3}"
+                  DTS:ExecutableType="Microsoft.SendMailTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Send Mail Task"
+                  DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:PropertyExpression
+                    DTS:Name="FromLine">@[$Package::EmailFrom]</DTS:PropertyExpression>
+                  <DTS:PropertyExpression
+                    DTS:Name="MessageSource">" Hi guys,
+
+The package "+ @[System::PackageName] + " has failed in " + @[$Package::Environment] + " with the error
+Error Code: "+(DT_WSTR,50) @[System::ErrorCode]+"
+Error Description: "+ @[System::ErrorDescription] +"
+Error Source: "+ @[System::SourceName]+"
+
+Please contact us if you have any concern.
+
+Thank you,
+Dev Team"</DTS:PropertyExpression>
+                  <DTS:PropertyExpression
+                    DTS:Name="Subject">@[System::PackageName] + " failed in " +  @[$Package::Environment]</DTS:PropertyExpression>
+                  <DTS:PropertyExpression
+                    DTS:Name="ToLine">@[$Package::EmailTo]</DTS:PropertyExpression>
+                  <DTS:ObjectData>
+                    <SendMailTask:SendMailTaskData
+                      SendMailTask:SMTPServer="{21A71905-022E-4313-943F-E97718E8BD1D}"
+                      SendMailTask:From="huyanh.ha.97@gmail.com"
+                      SendMailTask:To="aha2@depaul.edu"
+                      SendMailTask:Subject="Package1 failed in Prod"
+                      SendMailTask:MessageSource=" Hi guys,&#xA;&#xA;The package Package1 has failed in Prod with the error&#xA;Error Code: 0&#xA;Error Description: &#xA;Error Source: &#xA;&#xA;Please contact us if you have any concern.&#xA;&#xA;Thank you,&#xA;Dev Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -149,8 +307,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Disease\Disease SQL.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -295,7 +453,7 @@
                       dataType="System.String"
                       description="The name of the table to be fetched."
                       expressionType="Notify"
-                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_DISEASE"</property>
+                      name="TableName">"STAGGING_SCHEMA"."STAGGING_DISEASE"</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -340,8 +498,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Disease\to Disease SnowFlake.Connections[ODBCConnection]"
-                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
-                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerID="Package.ConnectionManagers[Snowflake.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[Snowflake.hank0720]"
                       description="The ODBC runtime connection used to access the database."
                       name="ODBCConnection" />
                   </connections>
@@ -517,8 +675,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Insurance\Insurance SQL.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -651,7 +809,7 @@
                       dataType="System.String"
                       description="The name of the table to be fetched."
                       expressionType="Notify"
-                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_INSURANCE"</property>
+                      name="TableName">"STAGGING_SCHEMA"."STAGGING_INSURANCE"</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -696,8 +854,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Insurance\to Insurance SnowFlake.Connections[ODBCConnection]"
-                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
-                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerID="Package.ConnectionManagers[Snowflake.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[Snowflake.hank0720]"
                       description="The ODBC runtime connection used to access the database."
                       name="ODBCConnection" />
                   </connections>
@@ -867,8 +1025,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Medical\Medical SQL.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -983,7 +1141,7 @@
                       dataType="System.String"
                       description="The name of the table to be fetched."
                       expressionType="Notify"
-                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_MEDICAL"</property>
+                      name="TableName">"STAGGING_SCHEMA"."STAGGING_MEDICAL"</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -1028,8 +1186,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Medical\to Medical SnowFlake.Connections[ODBCConnection]"
-                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
-                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerID="Package.ConnectionManagers[Snowflake.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[Snowflake.hank0720]"
                       description="The ODBC runtime connection used to access the database."
                       name="ODBCConnection" />
                   </connections>
@@ -1188,8 +1346,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Medical Detail\Medical SQL.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1219,6 +1377,15 @@
                           length="10"
                           lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Symptom_iD]"
                           name="Symptom_iD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Allergies_flag]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].ExternalColumns[Allergies_flag]"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Allergies_flag]"
+                          name="Allergies_flag"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -1261,6 +1428,11 @@
                           lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Symptom_iD]"
                           name="Symptom_iD" />
                         <outputColumn
+                          refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Allergies_flag]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[Allergies_flag]"
+                          name="Allergies_flag" />
+                        <outputColumn
                           refId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
                           lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -1290,7 +1462,7 @@
                       dataType="System.String"
                       description="The name of the table to be fetched."
                       expressionType="Notify"
-                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_MEDICALDETAIL"</property>
+                      name="TableName">"STAGGING_SCHEMA"."STAGGING_MEDICALDETAIL"</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -1335,8 +1507,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Connections[ODBCConnection]"
-                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
-                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerID="Package.ConnectionManagers[Snowflake.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[Snowflake.hank0720]"
                       description="The ODBC runtime connection used to access the database."
                       name="ODBCConnection" />
                   </connections>
@@ -1357,14 +1529,6 @@
                           cachedName="Medical_iD"
                           externalMetadataColumnId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[MEDICAL_ID]"
                           lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Medical_iD]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].Columns[Symptom_iD]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="Symptom_iD"
-                          externalMetadataColumnId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_ID]"
-                          lineageId="Package\Sequence Container\Medical Detail\Medical SQL.Outputs[OLE DB Source Output].Columns[Symptom_iD]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1372,32 +1536,19 @@
                           refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[MEDICAL_ID]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="10"
                           name="MEDICAL_ID" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[SYMPTOM_ID]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="10"
                           name="SYMPTOM_ID" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[DOCTOR_NAME]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="DOCTOR_NAME" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[ALLERGIES]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="ALLERGIES" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[WORK_PHONE]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="WORK_PHONE" />
+                          refId="Package\Sequence Container\Medical Detail\to Medical SnowFlake.Inputs[ODBC Destination Input].ExternalColumns[ALLERGIES_FLAG]"
+                          dataType="numeric"
+                          name="ALLERGIES_FLAG"
+                          precision="38" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1502,8 +1653,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Patient\Patient SQL.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1806,7 +1957,7 @@
                       dataType="System.String"
                       description="The name of the table to be fetched."
                       expressionType="Notify"
-                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_PATIENT"</property>
+                      name="TableName">"STAGGING_SCHEMA"."STAGGING_PATIENT"</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -1851,8 +2002,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Patient\to Patient SnowFlake.Connections[ODBCConnection]"
-                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
-                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerID="Package.ConnectionManagers[Snowflake.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[Snowflake.hank0720]"
                       description="The ODBC runtime connection used to access the database."
                       name="ODBCConnection" />
                   </connections>
@@ -2124,8 +2275,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Symptom\Symptom SQL.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LONCI57\SQLEXPRESS.Pipeline_Group02]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5EO5NDK\MSSQLSERVER01.Pipeline_Group02]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2264,7 +2415,7 @@
                       dataType="System.String"
                       description="The name of the table to be fetched."
                       expressionType="Notify"
-                      name="TableName">"DATAWAREHOUSE_DIAGNOSIS"."DIM_SYMPTOM"</property>
+                      name="TableName">"STAGGING_SCHEMA"."STAGGING_SYMPTOM"</property>
                     <property
                       dataType="System.Int32"
                       description="Specify the number of rows fetched per batch."
@@ -2309,8 +2460,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Symptom\to Symptom SnowFlake.Connections[ODBCConnection]"
-                      connectionManagerID="Package.ConnectionManagers[s1.hank0720]"
-                      connectionManagerRefId="Package.ConnectionManagers[s1.hank0720]"
+                      connectionManagerID="Package.ConnectionManagers[Snowflake.hank0720]"
+                      connectionManagerRefId="Package.ConnectionManagers[Snowflake.hank0720]"
                       description="The ODBC runtime connection used to access the database."
                       name="ODBCConnection" />
                   </connections>
@@ -2444,49 +2595,49 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="223,42"
+          Size="230,42"
           Id="Package\Delete before Loading to Snow"
           TopLeft="97,79.6249996044983" />
         <NodeLayout
-          Size="117,42"
+          Size="119,42"
           Id="Package\Sequence Container\Disease"
           TopLeft="7,12.4166655743288" />
-        <NodeLayout
-          Size="112,42"
-          Id="Package\Sequence Container\Patient"
-          TopLeft="150,12.8333321495188" />
-        <NodeLayout
-          Size="123.5,42"
-          Id="Package\Sequence Container\Symptom"
-          TopLeft="287,15.4166659294731" />
         <NodeLayout
           Size="125,42"
           Id="Package\Sequence Container\Insurance"
           TopLeft="10,91.0833324239485" />
         <NodeLayout
-          Size="115.5,42"
+          Size="116,42"
           Id="Package\Sequence Container\Medical"
           TopLeft="147,93.6666658487585" />
         <NodeLayout
           Size="145,42"
           Id="Package\Sequence Container\Medical Detail"
           TopLeft="293,96.9166658326155" />
+        <NodeLayout
+          Size="112,42"
+          Id="Package\Sequence Container\Patient"
+          TopLeft="150,12.8333321495188" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Sequence Container\Symptom"
+          TopLeft="287,15.4166659294731" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="465.5,210.5"
-          Size="465.5,253.5"
+          PanelSize="466,210"
+          Size="466,253"
           Id="Package\Sequence Container"
           TopLeft="103,198.791665679258" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="208.5,121.624999604498">
+          TopLeft="212,121.624999604498">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="127.25,77.1666660747597"
+              EndConnector="124,77.1666660747597"
               Start="0,0"
-              End="127.25,69.6666660747597">
+              End="124,69.6666660747597">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2497,13 +2648,13 @@
                     Point2="0,38.5833330373799"
                     Point3="4,38.5833330373799" />
                   <mssgle:LineSegment
-                    End="123.25,38.5833330373799" />
+                    End="120,38.5833330373799" />
                   <mssgle:CubicBezierSegment
-                    Point1="123.25,38.5833330373799"
-                    Point2="127.25,38.5833330373799"
-                    Point3="127.25,42.5833330373799" />
+                    Point1="120,38.5833330373799"
+                    Point2="124,38.5833330373799"
+                    Point3="124,42.5833330373799" />
                   <mssgle:LineSegment
-                    End="127.25,69.6666660747597" />
+                    End="124,69.6666660747597" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2519,13 +2670,13 @@
     design-time-name="Package\Sequence Container\Disease">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="141,42"
           Id="Package\Sequence Container\Disease\Disease SQL"
           TopLeft="146.5,90.9999995479981" />
         <NodeLayout
-          Size="183.5,42"
+          Size="188,42"
           Id="Package\Sequence Container\Disease\to Disease SnowFlake"
           TopLeft="386.5,131.083332682235" />
         <EdgeLayout
@@ -2534,9 +2685,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="99,40.0833331342373"
+              EndConnector="99,40.0833331342369"
               Start="0,0"
-              End="91.5,40.0833331342373">
+              End="91.5,40.0833331342369">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2547,21 +2698,19 @@
                     Point2="49.5,0"
                     Point3="49.5,4" />
                   <mssgle:LineSegment
-                    End="49.5,36.0833331342373" />
+                    End="49.5,36.0833331342369" />
                   <mssgle:CubicBezierSegment
-                    Point1="49.5,36.0833331342373"
-                    Point2="49.5,40.0833331342373"
-                    Point3="53.5,40.0833331342373" />
+                    Point1="49.5,36.0833331342369"
+                    Point2="49.5,40.0833331342369"
+                    Point3="53.5,40.0833331342369" />
                   <mssgle:LineSegment
-                    End="91.5,40.0833331342373" />
+                    End="91.5,40.0833331342369" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2594,6 +2743,234 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Sequence Container\Insurance">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Sequence Container\Insurance\Insurance SQL"
+          TopLeft="145.833333333333,90.9999995479981" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Sequence Container\Insurance\to Insurance SnowFlake"
+          TopLeft="386.5,131.083332682235" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Insurance.Paths[OLE DB Source Output]"
+          TopLeft="294.833333333333,111.999999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.6666666666667,40.0833331342369"
+              Start="0,0"
+              End="84.1666666666667,40.0833331342369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.8333333333333,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.8333333333333,0"
+                    Point2="45.8333333333333,0"
+                    Point3="45.8333333333333,4" />
+                  <mssgle:LineSegment
+                    End="45.8333333333333,36.0833331342369" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.8333333333333,36.0833331342369"
+                    Point2="45.8333333333333,40.0833331342369"
+                    Point3="49.8333333333333,40.0833331342369" />
+                  <mssgle:LineSegment
+                    End="84.1666666666667,40.0833331342369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Insurance\Insurance SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Insurance\to Insurance SnowFlake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Medical">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Sequence Container\Medical\to Medical SnowFlake"
+          TopLeft="386.5,131.083332682235" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container\Medical\Medical SQL"
+          TopLeft="145.833333333333,90.9999995479981" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Medical.Paths[OLE DB Source Output]"
+          TopLeft="284.833333333333,111.999999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.666666666667,40.0833331342369"
+              Start="0,0"
+              End="94.166666666667,40.0833331342369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.8333333333335,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.8333333333335,0"
+                    Point2="50.8333333333335,0"
+                    Point3="50.8333333333335,4" />
+                  <mssgle:LineSegment
+                    End="50.8333333333335,36.0833331342369" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.8333333333335,36.0833331342369"
+                    Point2="50.8333333333335,40.0833331342369"
+                    Point3="54.8333333333335,40.0833331342369" />
+                  <mssgle:LineSegment
+                    End="94.166666666667,40.0833331342369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Medical\Medical SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Medical\to Medical SnowFlake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Medical Detail">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Sequence Container\Medical Detail\to Medical SnowFlake"
+          TopLeft="386.5,131.083332682235" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container\Medical Detail\Medical SQL"
+          TopLeft="145.833333333333,90.9999995479981" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Medical Detail.Paths[OLE DB Source Output]"
+          TopLeft="284.833333333333,111.999999547998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.666666666667,40.0833331342369"
+              Start="0,0"
+              End="94.166666666667,40.0833331342369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.8333333333335,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.8333333333335,0"
+                    Point2="50.8333333333335,0"
+                    Point3="50.8333333333335,4" />
+                  <mssgle:LineSegment
+                    End="50.8333333333335,36.0833331342369" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.8333333333335,36.0833331342369"
+                    Point2="50.8333333333335,40.0833331342369"
+                    Point3="54.8333333333335,40.0833331342369" />
+                  <mssgle:LineSegment
+                    End="94.166666666667,40.0833331342369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Medical Detail\Medical SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Medical Detail\to Medical SnowFlake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Sequence Container\Patient">
     <LayoutInfo>
       <GraphLayout
@@ -2603,7 +2980,7 @@
           Id="Package\Sequence Container\Patient\to Patient SnowFlake"
           TopLeft="386.5,131.083332682235" />
         <NodeLayout
-          Size="135.5,42"
+          Size="136,42"
           Id="Package\Sequence Container\Patient\Patient SQL"
           TopLeft="146.5,90.9999995479981" />
         <EdgeLayout
@@ -2679,7 +3056,7 @@
           Id="Package\Sequence Container\Symptom\Symptom SQL"
           TopLeft="146.5,90.9999995479981" />
         <NodeLayout
-          Size="189.5,42"
+          Size="190,42"
           Id="Package\Sequence Container\Symptom\to Symptom SnowFlake"
           TopLeft="386.5,131.083332682235" />
         <EdgeLayout
@@ -2745,233 +3122,21 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Sequence Container\Insurance">
+  <DtsEventHandler
+    design-time-name="Package\Sequence Container\Disease.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="149,42"
-          Id="Package\Sequence Container\Insurance\Insurance SQL"
-          TopLeft="145.833333333333,90.9999995479981" />
+          Size="155,42"
+          Id="Package\Sequence Container\Disease.EventHandlers[OnError]\Send Mail Task"
+          TopLeft="247,53" />
         <NodeLayout
-          Size="191.5,42"
-          Id="Package\Sequence Container\Insurance\to Insurance SnowFlake"
-          TopLeft="386.5,131.083332682235" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Insurance.Paths[OLE DB Source Output]"
-          TopLeft="294.833333333333,111.999999547998">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="91.6666666666667,40.0833331342369"
-              Start="0,0"
-              End="84.1666666666667,40.0833331342369">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="41.8333333333333,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.8333333333333,0"
-                    Point2="45.8333333333333,0"
-                    Point3="45.8333333333333,4" />
-                  <mssgle:LineSegment
-                    End="45.8333333333333,36.0833331342369" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.8333333333333,36.0833331342369"
-                    Point2="45.8333333333333,40.0833331342369"
-                    Point3="49.8333333333333,40.0833331342369" />
-                  <mssgle:LineSegment
-                    End="84.1666666666667,40.0833331342369" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="134,42"
+          Id="Package\Sequence Container\Disease.EventHandlers[OnError]\Script Task"
+          TopLeft="453,180" />
       </GraphLayout>
     </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Insurance\Insurance SQL">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Insurance\to Insurance SnowFlake">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Sequence Container\Medical">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence Container\Medical\Medical SQL"
-          TopLeft="145.833333333333,90.9999995479981" />
-        <NodeLayout
-          Size="181.5,42"
-          Id="Package\Sequence Container\Medical\to Medical SnowFlake"
-          TopLeft="386.5,131.083332682235" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Medical.Paths[OLE DB Source Output]"
-          TopLeft="284.833333333333,111.999999547998">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="101.666666666667,40.0833331342369"
-              Start="0,0"
-              End="94.166666666667,40.0833331342369">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="46.8333333333335,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="46.8333333333335,0"
-                    Point2="50.8333333333335,0"
-                    Point3="50.8333333333335,4" />
-                  <mssgle:LineSegment
-                    End="50.8333333333335,36.0833331342369" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50.8333333333335,36.0833331342369"
-                    Point2="50.8333333333335,40.0833331342369"
-                    Point3="54.8333333333335,40.0833331342369" />
-                  <mssgle:LineSegment
-                    End="94.166666666667,40.0833331342369" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Medical\Medical SQL">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Medical\to Medical SnowFlake">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Sequence Container\Medical Detail">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence Container\Medical Detail\Medical SQL"
-          TopLeft="145.833333333333,90.9999995479981" />
-        <NodeLayout
-          Size="181.5,42"
-          Id="Package\Sequence Container\Medical Detail\to Medical SnowFlake"
-          TopLeft="386.5,131.083332682235" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Medical Detail.Paths[OLE DB Source Output]"
-          TopLeft="284.833333333333,111.999999547998">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="101.666666666667,40.0833331342369"
-              Start="0,0"
-              End="94.166666666667,40.0833331342369">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="46.8333333333335,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="46.8333333333335,0"
-                    Point2="50.8333333333335,0"
-                    Point3="50.8333333333335,4" />
-                  <mssgle:LineSegment
-                    End="50.8333333333335,36.0833331342369" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50.8333333333335,36.0833331342369"
-                    Point2="50.8333333333335,40.0833331342369"
-                    Point3="54.8333333333335,40.0833331342369" />
-                  <mssgle:LineSegment
-                    End="94.166666666667,40.0833331342369" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Medical Detail\Medical SQL">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Medical Detail\to Medical SnowFlake">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
