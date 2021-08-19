@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-5EO5NDK\17737"
   DTS:DTSID="{1BE4F591-2909-4F92-B431-03E682468F73}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{8265D71B-400D-499C-B7DE-1421A58D42BB}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{2F2FE9F9-8B0D-43A5-B7F2-E9B05935ED86}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -853,7 +853,7 @@
         <NodeLayout
           Size="172,42"
           Id="Package\Data Profiling Task"
-          TopLeft="522,124" />
+          TopLeft="489,110" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
