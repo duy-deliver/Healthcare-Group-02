@@ -9,40 +9,42 @@ import numpy as np
 
 fake = Faker()
 DateExp = []
+RECORD_COUNT = 50
+Insurance_ID = []
 
-def create_csv_file_Insurance():
+def create_csv_file_Insurance(RECORD_COUNT):
     time_stampe = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
     raw_path = os.path.dirname(__file__)
     
     with open(f'{raw_path}\Insurance-{time_stampe}.csv', 'w', newline='') as csvfile:
         fieldnames = ['Insurance_ID', 'Insurance_Cover_Amount', 'Insurance_Type', 'Insurance_Expired']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        RECORD_COUNT = 2051
         writer.writeheader()
         Insurance = []
         TypeInsu = []
 
-        for i in range(0,1001):
+        for i in range(RECORD_COUNT):
             DateExp.append(fake.date_between_dates(date_start=datetime(2022,1,1), date_end=datetime(2025,12,31)))
             Insurance.append(random.choice([6000, 9000]))
             if (Insurance[i] == 6000):
                 TypeInsu.append("HMO")
             else:
                 TypeInsu.append("PMO")
-        for i in range(2000, RECORD_COUNT):
+        for i in range(RECORD_COUNT):
+            Insurance_ID.append('I' + str(fake.unique.random_int(2123456,2223456+RECORD_COUNT)))
             writer.writerow(
                 {
-                    'Insurance_ID': 'I' + str(i),
-                    'Insurance_Cover_Amount': Insurance[i-2000],
-                    'Insurance_Type': TypeInsu[i-2000],
-                    'Insurance_Expired': DateExp[i-2000]
+                    'Insurance_ID': Insurance_ID[i],
+                    'Insurance_Cover_Amount': Insurance[i],
+                    'Insurance_Type': TypeInsu[i],
+                    'Insurance_Expired': DateExp[i]
 
                 }
             )
 
 Patient_ID = []
 # Create Patient
-def create_csv_file_Patient():
+def create_csv_file_Patient(RECORD_COUNT):
 
     time_stampe = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
     raw_path = os.path.dirname(__file__)
@@ -51,14 +53,13 @@ def create_csv_file_Patient():
                       'Patient_Bloodtype','Patient_Weight_kg','History_Covid','Blood_Pressure_mmHG','Blood_Sugar_mgdL',
                       'Patient_Zip','Patient_State']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        RECORD_COUNT = 50
         writer.writeheader()
         for i in range(RECORD_COUNT):
-            Patient_ID.append('P' + str(i+1))
+            Patient_ID.append('P' + str(fake.unique.random_int(212,222+RECORD_COUNT)))
             writer.writerow(
                 {
-                    'Patient_ID': 'P' + str(i+1),
-                    'Insurance_ID': 'I' + str(i+2000),
+                    'Patient_ID': Patient_ID[i],
+                    'Insurance_ID': Insurance_ID[i],
                     'Patient_Name': fake.name(),
                     'Patient_Gender': random.choice(['Male', 'Female']),
                     'Patient_Age': fake.random_int(20,80),
@@ -127,6 +128,7 @@ for i in range(1,33):
         Disease_Fake_ID.append('D4')
     else:
         Disease_Fake_ID.append('D5')
+
 def create_csv_file_Symtom():
     Symptom_Stge = []
     Symtom_Stage_Desc = []
@@ -153,60 +155,68 @@ def create_csv_file_Symtom():
                     'Symptom_Stage_Desc': Symtom_Stage_Desc[i]
                 }
             )
+
+Medical_ID = []
 def create_csv_file_Medical():
 
     time_stampe = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
     raw_path = os.path.dirname(__file__)
     with open(f'{raw_path}\Medical-{time_stampe}.csv', 'w', newline='') as csvfile:
-        fieldnames = ['Medical_ID','Patient_ID','Appointment_Date','Spouse_Name','Spouse_Phone','Spouse_Occupation',
+        fieldnames = ['Medical_ID','Patient_ID','Symptom_ID','Appointment_Date','Doctor_Name','Allergies', 
+                        'Spouse_Name','Spouse_Phone','Work_Phone','Spouse_Occupation',
                       'Social_Security_Last_4','Surgery_Status']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         RECORD_COUNT =200
         writer.writeheader()
         for i in range(RECORD_COUNT):
+            Medical_ID.append('M' + str(fake.unique.random_int(21220,22200+RECORD_COUNT)))
             writer.writerow(
                 {
-                    'Medical_ID': 'M' + str(i+1),
+                    'Medical_ID': Medical_ID[i],
                     'Patient_ID': random.choice(Patient_ID),
+                    'Symptom_ID': random.choice(Symptom_ID),
                     'Appointment_Date': fake.date_between_dates(date_start=datetime(2019,1,1), date_end=datetime(2021,8,9)),
+                    'Doctor_Name': fake.company().replace("-"," ").replace(",","").split(" ")[0],
+                    'Allergies': random.choice([0,1]),
                     'Spouse_Name': fake.name(),
                     'Spouse_Phone': fake.phone_number(),
+                    'Work_Phone': '090' + str(fake.random_int(1234567,9876543)),
                     'Spouse_Occupation' : fake.random_int(100,200),
                     'Social_Security_Last_4' : fake.random_int(1000,9999),
                     'Surgery_Status' : random.choice([0,1])
                 }
             )
 
-def create_csv_file_MedicalDetail():
+# def create_csv_file_MedicalDetail():
 
-    time_stampe = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
-    raw_path = os.path.dirname(__file__)
-    with open(f'{raw_path}\MedicalDetail-{time_stampe}.csv', 'w', newline='') as csvfile:
-        fieldnames = ['Medical_ID','Symptom_ID','Doctor_Name','Allergies','Work_Phone']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        RECORD_COUNT =200
-        writer.writeheader()
-        for i in range(RECORD_COUNT):
-            writer.writerow(
-                {
-                    'Medical_ID': 'M' + str(i+1),
-                    'Symptom_ID': random.choice(Symptom_ID),
-                    'Doctor_Name': fake.name(),
-                    'Allergies': random.choice([0,1]),
-                    'Work_Phone': fake.phone_number(),
-                }
-            )
+#     time_stampe = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
+#     raw_path = os.path.dirname(__file__)
+#     with open(f'{raw_path}\MedicalDetail-{time_stampe}.csv', 'w', newline='') as csvfile:
+#         fieldnames = ['Medical_ID','Symptom_ID','Doctor_Name','Allergies','Work_Phone']
+#         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+#         RECORD_COUNT =200
+#         writer.writeheader()
+#         for i in range(RECORD_COUNT):
+#             writer.writerow(
+#                 {
+#                     'Medical_ID': 'M' + str(i+1),
+#                     'Symptom_ID': random.choice(Symptom_ID),
+#                     'Doctor_Name': fake.name(),
+#                     'Allergies': random.choice([0,1]),
+#                     'Work_Phone': fake.phone_number(),
+#                 }
+#             )
 
 if __name__ == '__main__':
     print('Creating a Insurance data...')
-    create_csv_file_Insurance()
+    create_csv_file_Insurance(RECORD_COUNT)
     print('Creating a Patient data...')
-    create_csv_file_Patient()
+    create_csv_file_Patient(RECORD_COUNT)
     print('Creating a Disease data...')
     create_csv_file_Disease()
     print('Creating a Symptom data...')
     create_csv_file_Symtom()
     print('Creating a Medial data...')
     create_csv_file_Medical()
-    print('Creating a Medial Detail data...')
-    create_csv_file_MedicalDetail()
+    # print('Creating a Medial Detail data...')
+    # create_csv_file_MedicalDetail()

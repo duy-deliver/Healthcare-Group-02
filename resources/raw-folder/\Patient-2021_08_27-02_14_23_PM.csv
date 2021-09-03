@@ -1,0 +1,51 @@
+Patient_ID,Insurance_ID,Patient_Name,Patient_Gender,Patient_Age,Patient_Bloodtype,Patient_Weight_kg,History_Covid,Blood_Pressure_mmHG,Blood_Sugar_mgdL,Patient_Zip,Patient_State
+P261,I2138370,Shawn Wright,Female,63,O,82,0,181,183,55444,Maryland
+P232,I2152126,Jimmy Holt,Male,54,A,116,0,170,112,01749,Ohio
+P236,I2214220,Joanna Murphy,Male,28,AB,77,0,198,137,07090,Louisiana
+P224,I2133179,Gregory Shannon,Female,50,O,102,1,130,120,72918,Pennsylvania
+P217,I2171516,Nicholas Roberts,Female,45,A,104,0,127,167,70538,New York
+P235,I2185958,Brad Russell,Female,45,AB,102,1,153,181,10375,Montana
+P254,I2196396,Sean Gibbs,Female,59,B,51,1,150,156,33791,South Carolina
+P219,I2143707,Brian Cruz,Female,51,O,102,1,123,191,73332,Georgia
+P221,I2185254,Michael Long MD,Male,57,AB,94,1,184,111,60148,Rhode Island
+P248,I2219297,Charles Smith,Female,26,B,101,0,145,148,19594,North Dakota
+P266,I2189011,Sarah Wallace,Female,31,B,101,1,197,104,00784,Montana
+P263,I2175029,Ashley Smith,Female,21,A,114,1,135,135,64432,Minnesota
+P246,I2188649,Kimberly Martinez,Male,68,A,96,0,187,193,62479,Utah
+P244,I2126423,Madison Jenkins,Female,30,A,68,0,182,183,04306,Nebraska
+P234,I2130081,Jane Russell,Female,76,O,89,0,160,106,68209,Oregon
+P214,I2148903,Susan George,Male,68,AB,106,0,145,199,71901,Arizona
+P223,I2211831,Wesley Little,Male,65,A,98,0,196,165,55171,North Carolina
+P267,I2208148,Ashley Pena,Male,25,O,78,1,185,105,00751,Oklahoma
+P212,I2158494,Joyce Garcia,Male,45,B,81,0,184,161,56765,South Carolina
+P270,I2200986,Eric King,Male,50,A,111,0,141,163,05515,Nevada
+P260,I2166574,David Thomas,Female,73,A,94,1,188,158,56881,Illinois
+P226,I2214052,Joseph Long,Male,27,B,60,0,187,171,30278,Alaska
+P257,I2202718,Lisa Allen,Male,70,B,84,0,163,193,13952,North Dakota
+P259,I2190204,Debbie Wood,Female,43,AB,99,1,186,189,85488,Michigan
+P240,I2222745,William Carrillo,Female,58,A,67,1,144,147,12062,Kansas
+P251,I2149407,Jeffrey Lee,Male,79,B,106,0,195,200,93346,Missouri
+P229,I2181223,Kimberly Heath,Male,32,O,74,0,121,190,16994,Delaware
+P241,I2197759,Amanda Davis,Female,50,O,45,1,182,121,10501,New Mexico
+P213,I2153838,Sarah House,Female,65,O,101,1,166,189,82294,Alabama
+P231,I2189610,Jonathan Williams,Female,63,B,87,0,128,105,02135,Nevada
+P228,I2213384,John Savage,Female,61,AB,59,1,163,199,36345,Massachusetts
+P227,I2210974,Christopher Kelly,Female,46,A,85,1,169,162,91839,Connecticut
+P256,I2219681,Carlos Lynch,Male,67,B,91,0,187,106,27729,Minnesota
+P272,I2163388,Andrew Williams,Female,61,B,79,1,166,146,52278,Vermont
+P239,I2202506,Katherine Jones,Female,22,AB,43,1,168,123,21829,Kansas
+P243,I2147592,Carol Solomon,Female,61,AB,82,0,183,196,13423,Delaware
+P258,I2147305,Adrian Dillon,Female,75,B,106,0,181,189,35051,Wisconsin
+P237,I2147668,Mark Thompson,Male,80,A,116,1,165,117,91509,Illinois
+P230,I2198560,Steven Stewart,Male,46,B,119,0,152,106,42340,Alaska
+P268,I2210616,Taylor Johnson,Female,67,B,84,0,141,101,03690,Hawaii
+P255,I2153473,Matthew Reyes,Male,32,B,116,0,180,116,58919,New Hampshire
+P269,I2218154,Michelle Allen,Female,24,A,40,0,174,134,06621,New Jersey
+P245,I2147361,Shawna Miranda,Female,72,O,109,0,151,120,15811,Oklahoma
+P238,I2153481,Lynn Cochran,Male,21,B,68,0,154,168,68240,Maryland
+P242,I2145524,Devin Dixon,Female,65,B,97,1,151,200,22507,Massachusetts
+P222,I2138454,Douglas Howard,Female,33,O,112,1,164,111,57121,Mississippi
+P252,I2154470,Daniel Trevino,Female,61,AB,115,1,140,136,92492,Utah
+P216,I2199497,Alan Snow,Female,73,A,49,1,157,116,18299,Mississippi
+P249,I2177191,Heather Sanchez,Male,59,A,40,1,124,172,81433,West Virginia
+P225,I2160621,Ashley Brown,Female,39,A,54,0,160,162,88339,Oregon
