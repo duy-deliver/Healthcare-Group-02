@@ -1,0 +1,4 @@
+env
+__pycache__/
+Debug.ipynb
+.DS_Store

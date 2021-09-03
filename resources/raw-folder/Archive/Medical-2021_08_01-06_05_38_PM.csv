@@ -1,0 +1,4 @@
+Medical_ID,Patient_ID,Appointment_Date,Symptom_ID,Doctor_Name,Allergies,Work_Phone,Spouse_Name,Spouse_Phone,Spouse_Occupation,Social_Security_Last_4
+M1,P1,12/12/2021,S2,Bum,0,12345679,A,24,100,100
+M2,P1,12/12/2022,S3,Bum,1,12345679,A,25,130,129
+M3,P2,12/12/2022,S2,Cuym,1,12345679,A,36,140,198

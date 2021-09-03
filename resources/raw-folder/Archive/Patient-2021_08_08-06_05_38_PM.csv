@@ -1,0 +1,6 @@
+Patient_ID,Insurance_ID,Patient_Name,Patient_Gender,Patient_Age,Patient_Zip,Patient_State,Patient_Bloodtype,Patient_Weight_kg,History_Covid,Blood_Pressure_mmHG,Blodd_Sugar_mgdL
+P1,I2001,A,Male,23,60601,IL,A,70,0,120,123
+P2,I2005,B,Male,24,60601,NY,B,70,1,121,124
+P3,I2I20,C,Male,40,60601,TX,AB,70,0,122,120
+P4,I2004,D,Female,79,60601,TX,O,70,1,123,129
+P5,I2005,E,Female,80,60601,TX,A,70,0,124,120
