@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-LONCI57\Admin"
   DTS:DTSID="{9B32C384-A7DC-4394-91C0-7C8DAE58C33B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{84FD02E7-D5AB-4530-9DD5-A21BB4922ABE}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{C1D0B089-17DF-42CE-BB69-41156518B4AD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -35,7 +35,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-5EO5NDK\MSSQLSERVER01;Initial Catalog=Pipeline_Group02;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Pipeline_Group03;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -88,12 +88,7 @@
       DTS:ObjectName="Snowflake.hank0720">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="uid=hank0720;Dsn=Snowflake;">
-          <DTS:Password
-            DTS:Name="pwd"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGI2/OuDfsESDOI8xsjCWJQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACI6lHIiW3jhJ+ag7qWRfQiHPsMPiXrcD35f5PTgewAtAAAAAAOgAAAAAIAACAAAAC7EyfSEeEkiBnqJ42xhHj0rojKcvwmmkePX+vRd8xYqSAAAAC/1lOS7bb6KfhtGM0W9Ed9hv5liILL9PhfWy1Y+vUaJUAAAACCUXIo0FnqtGJktYEtAbqKnLmtoktvBvhAEYHI5SjTmSqhk9YObZmTxRhSr1Kw6Vp9hedENWUFg/MBTirgVQEA</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="uid=hank0720;Dsn=Snowflake;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -2702,7 +2697,7 @@ Dev Team"</DTS:PropertyExpression>
     design-time-name="Package\Loading Data to Snowflake\Disease">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="141,42"
           Id="Package\Loading Data to Snowflake\Disease\Disease SQL"
@@ -2742,9 +2737,7 @@ Dev Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
