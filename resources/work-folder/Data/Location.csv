@@ -1,0 +1,52 @@
+State_ID,State_Name,State_Climate,State_TotalPopulation,State_AgingPopulation
+L1,Test State,Cloudy with a chance of Meatball,6900000,931500
+1,Indiana,Warm-summer Mediterranean,3921,1265
+2,Oregon,Warm humid continental,3790,817
+3,Nebraska,Cold semi-arid,3990,1247
+4,Minnesota,Warm humid continental,3094,1073
+5,West Virginia,Hot humid continental,3904,945
+6,Delaware,Humid subtropical,2977,903
+7,Virginia,Hot humid continental,2926,1084
+8,Wisconsin,Humid subtropical,3533,1001
+9,Texas,Humid subtropical,3996,775
+10,Hawaii,Humid subtropical,2875,1142
+11,Kansas,Humid subtropical,3415,1118
+12,Mississippi,Warm humid continental,3512,1035
+13,Ohio,Humid subtropical,3754,832
+14,Michigan,Warm humid continental,2880,973
+15,Georgia,Humid subtropical,3995,750
+16,New Hampshire,Cold semi-arid,3059,729
+17,Tennessee,Hot humid continental,3159,871
+18,Idaho,Warm humid continental,3522,850
+19,Iowa,Hot humid continental,2847,1010
+20,New Jersey,Warm humid continental,3370,807
+21,Wyoming,Cold semi-arid,3112,944
+22,Arizona,Cold semi-arid,3151,763
+23,Alaska,Warm humid continental,3689,982
+24,Oklahoma,Cold semi-arid,3747,982
+25,Maine,Humid subtropical,3525,1022
+26,Florida,Warm humid continental,3812,739
+27,South Dakota,Warm humid continental,3305,936
+28,Vermont,Warm-summer Mediterranean,2783,1193
+29,Rhode Island,Humid subtropical,3914,1152
+30,Kentucky,Warm-summer Mediterranean,3077,754
+31,New York,Cold semi-arid,3968,1091
+32,Maryland,Hot humid continental,3075,1131
+33,Washington,Hot humid continental,3638,929
+34,Massachusetts,Humid subtropical,3944,1183
+35,Connecticut,Warm humid continental,3057,1065
+36,South Carolina,Hot humid continental,2917,710
+37,Alabama,Warm humid continental,3700,984
+38,Illinois,Warm-summer Mediterranean,3049,846
+39,New Mexico,Cold semi-arid,3512,726
+40,Nevada,Hot humid continental,3728,942
+41,Pennsylvania,Warm humid continental,3216,804
+42,Arkansas,Warm-summer Mediterranean,2785,1020
+43,Utah,Humid subtropical,3667,1177
+44,Missouri,Warm humid continental,3482,1134
+45,North Carolina,Hot humid continental,3256,760
+46,North Dakota,Warm-summer Mediterranean,3724,1092
+47,California,Humid subtropical,2859,1031
+48,Louisiana,Cold semi-arid,3719,867
+49,Montana,Warm humid continental,3330,847
+50,Colorado,Cold semi-arid,3144,890
