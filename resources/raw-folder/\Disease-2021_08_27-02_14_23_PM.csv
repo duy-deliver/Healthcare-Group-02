@@ -1,6 +1,0 @@
-Disease_ID,Disease_Name,Blood_Pressure_mmHg,Blood_Sugar_mgdL
-D1,Lung Cancer,<120,>140
-D2,Heart Cancer,>140,>140
-D3,Liver Cancer,>130,>140
-D4,Skin Cancer,<120,<140
-D5,Lymphoma,>140,>140

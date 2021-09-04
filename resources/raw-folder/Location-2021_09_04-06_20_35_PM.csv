@@ -1,0 +1,51 @@
+State_ID,State_Name,State_Climate,State_TotalPopulation,State_AgingPopulation
+1,Louisiana,Warm humid continental,3554,1052
+2,Alabama,Hot humid continental,2984,772
+3,New York,Hot humid continental,4116,1081
+4,Pennsylvania,Cold semi-arid,4048,1225
+5,Colorado,Humid subtropical,3559,1014
+6,Ohio,Hot humid continental,3108,988
+7,Washington,Humid subtropical,3696,1062
+8,Idaho,Hot humid continental,3668,978
+9,Illinois,Cold semi-arid,3911,917
+10,New Hampshire,Warm humid continental,3761,752
+11,Montana,Hot humid continental,2946,874
+12,Virginia,Humid subtropical,3983,752
+13,California,Warm-summer Mediterranean,3343,993
+14,Tennessee,Humid subtropical,3829,1216
+15,Minnesota,Cold semi-arid,3524,952
+16,New Jersey,Cold semi-arid,3720,1011
+17,Wisconsin,Warm-summer Mediterranean,3697,929
+18,Nevada,Hot humid continental,3452,1171
+19,Connecticut,Warm-summer Mediterranean,3876,969
+20,Arkansas,Warm-summer Mediterranean,3550,1150
+21,Kansas,Warm-summer Mediterranean,2874,784
+22,Arizona,Cold semi-arid,2810,863
+23,Oregon,Cold semi-arid,3166,1002
+24,Oklahoma,Warm humid continental,3706,1022
+25,Indiana,Hot humid continental,3143,881
+26,Delaware,Cold semi-arid,3502,1041
+27,Mississippi,Warm-summer Mediterranean,3858,1019
+28,North Dakota,Hot humid continental,3615,939
+29,Michigan,Humid subtropical,3810,1057
+30,Maryland,Humid subtropical,3589,1057
+31,Maine,Cold semi-arid,3589,837
+32,Texas,Humid subtropical,2950,797
+33,Massachusetts,Warm-summer Mediterranean,3225,737
+34,Hawaii,Warm-summer Mediterranean,3662,796
+35,North Carolina,Cold semi-arid,3614,810
+36,Florida,Cold semi-arid,3435,1086
+37,Missouri,Warm humid continental,3806,1104
+38,Kentucky,Hot humid continental,3680,1023
+39,Utah,Hot humid continental,3283,1003
+40,Nebraska,Warm-summer Mediterranean,3771,1061
+41,West Virginia,Cold semi-arid,2923,746
+42,Georgia,Warm humid continental,3551,1001
+43,South Carolina,Humid subtropical,2842,745
+44,Iowa,Warm-summer Mediterranean,3086,742
+45,Rhode Island,Cold semi-arid,3293,872
+46,South Dakota,Humid subtropical,2822,909
+47,Alaska,Hot humid continental,2803,1152
+48,New Mexico,Humid subtropical,3585,805
+49,Vermont,Cold semi-arid,3282,763
+50,Wyoming,Cold semi-arid,2777,1115
