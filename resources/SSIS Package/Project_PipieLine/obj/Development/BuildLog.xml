@@ -2,23 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Project_PipieLine</Name>
-    <LastWriteTime>2021-08-19T04:56:48.0110469Z</LastWriteTime>
+    <LastWriteTime>2021-09-04T17:51:34.4826812Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>SnowflakeLoading.dtsx</Name>
-      <LastWriteTime>2021-08-19T04:48:28.2501528Z</LastWriteTime>
+      <LastWriteTime>2021-08-28T15:54:46.7739733Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DataProfiling.dtsx</Name>
-      <LastWriteTime>2021-08-19T08:54:34.1799489Z</LastWriteTime>
+      <LastWriteTime>2021-08-24T04:22:13.3160416Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2021-08-19T05:40:02.317249Z</LastWriteTime>
+      <Name>Staging.dtsx</Name>
+      <LastWriteTime>2021-09-04T18:03:02.9245475Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
