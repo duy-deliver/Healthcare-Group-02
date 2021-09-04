@@ -17,20 +17,23 @@ NumPatient = 100000
 NumMedical = 1000000
 
 
-#Create Disease:
+#Create Disease Paramter
+
+Disease_Fake_ID = []
+
 Disease_name = ['Heart Cancer', 'Liver Cancer', 'Skin Cancer', 'Lymphoma', 'Lung Cancer']
 
 Blood_Pressure_mmHg = ['>140' ,'>130' ,'<120' , '>140' ,'<120']
 
 Blood_Sugar_mgdL = ['>140','>140','<140','>140','>140']
 
-#Create Climate:
+#Create Location Parameter
 
 Climate = ['Hot humid continental', 'Humid subtropical', 'Warm humid continental', 'Cold semi-arid', 'Warm-summer Mediterranean']
 
 
 
-#Create Symptom:
+#Create Symptom Parameter
 Symptom =[ 'Chest pain or pressure', 'Irregular heart rhythm', 'Shortness of breath', 'Unexpected weight gain or loss'
 ,'Swelling in the feet and ankles','Coughing-up blood','Rapid heart rate','Choking','Abdominal swelling','Back pain','Pain near the right shoulder blade'
 ,'Easy bruising or bleeding' ,'Not having an appetite' ,'Pale bowel movements or dark urine'
@@ -44,7 +47,6 @@ Symptom =[ 'Chest pain or pressure', 'Irregular heart rhythm', 'Shortness of bre
 ,'Swelling in the face or neck'
 ,'Bone pain','Jaundice' ,'Lumps in the neck or collarbone region' ]
 
-Disease_Fake_ID = []
 Symptom_ID = []
 for i in range(1,33):
     Symptom_ID.append('S' + str(i))
@@ -59,12 +61,14 @@ for i in range(1,33):
     else:
         Disease_Fake_ID.append('D5')
 
-
+#Create Patient Parameter
+Race = ["European American", "African American", "Asian American", "American Indian/Alaska Native", "Native Hawaiian/Pacific Islander"]
+Education = ['Middle school', 'High school', 'College', 'Bachelor', 'Master']
 
 def create_csv_file_Location(NumState, Climate, Total_Patient_State):
     time_stampe = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
     raw_path = os.getcwd()
-    with open(os.path.join(raw_path, 'Insurance-{}.csv'.format(time_stampe)), 'w', newline='') as csvfile:
+    with open(os.path.join(raw_path, 'Location-{}.csv'.format(time_stampe)), 'w', newline='') as csvfile:
         fieldnames = ['State_ID', 'State_Name', 'State_Climate', 'State_TotalPopulation', 'State_AgingPopulation']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -80,13 +84,13 @@ def create_csv_file_Location(NumState, Climate, Total_Patient_State):
             )
 
 # Create Patient
-def create_csv_file_Patient(NumPatient):
+def create_csv_file_Patient(NumPatient, Race, Education):
     time_stampe = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
     raw_path = os.getcwd()
     with open(os.path.join(raw_path, 'Patient-{}.csv'.format(time_stampe)), 'w', newline='') as csvfile:
         fieldnames = ['Patient_ID','Patient_Name','Patient_Gender','Patient_Age',
                       'Patient_Bloodtype','Patient_Weight_kg','History_Covid','Blood_Pressure_mmHG','Blood_Sugar_mgdL',
-                      'Patient_Zip','Patient_State']
+                      'Patient_State','Patient_Race','Patient_Income','Patient_Education','Patient_Zip']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for i in tqdm(range(NumPatient)):
@@ -102,8 +106,11 @@ def create_csv_file_Patient(NumPatient):
                     'History_Covid': random.choice([0,1]),
                     'Blood_Pressure_mmHG': fake.random_int(120,200),
                     'Blood_Sugar_mgdL': fake.random_int(100, 200),
-                    'Patient_Zip' : fake.zipcode(),
                     'Patient_State': fake.random_int(1,50),
+                    'Patient_Race' : random.choice(Race),
+                    'Patient_Income' : fake.random_int(20, 1000),
+                    'Patient_Education': random.choice(Education),
+                    'Patient_Zip' : fake.zipcode(),
 
                 }
             )
@@ -164,9 +171,9 @@ def create_csv_file_Medical(NumMedical):
     time_stampe = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
     raw_path = os.getcwd()
     with open(os.path.join(raw_path, 'Medical-{}.csv'.format(time_stampe)), 'w', newline='') as csvfile:
-        fieldnames = ['Medical_ID','Patient_ID','Symptom_ID','Appointment_Date','Doctor_Name','Allergies', 
-                        'Spouse_Name','Spouse_Phone','Work_Phone','Spouse_Occupation',
-                      'Social_Security_Last_4','Surgery_Status']
+        fieldnames = ['Medical_ID','Patient_ID','Symptom_ID','Doctor_Name','Allergies', 
+                        'Spouse_Name','Spouse_Phone','Work_Phone','Surgery_Status',
+                      'Social_Security_Last_4','Spouse_Occupation','Appointment_Date']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for i in tqdm(range(NumMedical)):
@@ -210,8 +217,8 @@ def create_csv_file_Medical(NumMedical):
 
 if __name__ == '__main__':
     print('Creating a Patient data...')
-    Total_Patient_State = create_csv_file_Patient(NumPatient)
-    print('Creating a Insurance data...')
+    Total_Patient_State = create_csv_file_Patient(NumPatient, Race, Education)
+    print('Creating a Location data...')
     create_csv_file_Location(NumState, Climate, Total_Patient_State)
     print('Creating a Disease data...')
     create_csv_file_Disease()
