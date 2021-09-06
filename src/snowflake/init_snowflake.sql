@@ -1,166 +1,315 @@
-CREATE OR REPLACE TABLE PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Disease(
-	Disease_iD varchar(2) NOT NULL,
-	Disease_name varchar(20) NOT NULL,
-	Blood_pressure_mmHg varchar(10) NULL,
-	Blood_sugar_mgdL varchar(10) NULL
-  );
+-- Set up Warehouse
+CREATE WAREHOUSE IF NOT EXISTS QOOBEE_WH WITH WAREHOUSE_SIZE = 'SMALL' WAREHOUSE_TYPE = 'STANDARD' AUTO_SUSPEND = 600 AUTO_RESUME = TRUE;
+USE WAREHOUSE QOOBEE_WH;
 
+-- Set up Database
+CREATE DATABASE IF NOT EXISTS FvHIS_DE;
 
-CREATE OR REPLACE TABLE PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Insurance(
-	Insurance_iD varchar(10) NOT NULL,
-	Insurance_cover_amount int NULL,
-	Insurance_type varchar(3) NULL,
-	Insurance_expired datetime NULL
-  );
+USE DATABASE FvHIS_DE;
+
+-- Set up Schema
+CREATE SCHEMA IF NOT EXISTS DISEASE_DIAGNOSIS;
+
+-----------------------------------------------------------------------
+-- Set up Table for DATA ENGINEER
+
+CREATE OR REPLACE TABLE FVHIS_DE.DISEASE_DIAGNOSIS.DIM_DISEASE
+    (Disease_ID varchar(10) NOT NULL,
+  Disease_name varchar(50) NULL,
+  Blood_pressure_mmHg varchar(10) NULL,
+  Blood_sugar_mgdL varchar(10) NULL,
+    insert_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
+
+CREATE OR REPLACE TABLE FvHIS_DE.DISEASE_DIAGNOSIS.DIM_DATE
+   (Date DATE,
+    Year SMALLINT,
+    Quarter SMALLINT,
+    Month SMALLINT,
+    Day SMALLINT,
+    insert_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
+    
+CREATE OR REPLACE TABLE FVHIS_DE.DISEASE_DIAGNOSIS.DIM_LOCATION
+    (State_ID  varchar(10) NOT NULL,
+  State_Name varchar(50) NOT NULL,
+  Climate varchar(100) NULL,
+  Aging_Population int DEFAULT 0,
+  Total_Population int NOT NULL,
+    insert_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
+    
+CREATE OR REPLACE TABLE FVHIS_DE.DISEASE_DIAGNOSIS.DIM_MEDICAL
+    (Medical_ID varchar(10) NOT NULL,
+    Allergies_flag int NULL,
+    Surgery_Status_Flag int,
+    Work_Phone varchar(50),
+    Social_Security_Last_4 varchar(4),
+    Appointment_date DATE NULL,
+    insert_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
+    
+CREATE OR REPLACE TABLE FVHIS_DE.DISEASE_DIAGNOSIS.DIM_SYMPTOM
+    (Symptom_ID varchar(10) NOT NULL,
+  Symptom_name varchar(50) NULL,
+  Symptom_stage int DEFAULT 0,
+    Symptom_Stage_Desc varchar(100) DEFAULT 'NONE',
+    insert_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
+    
+CREATE OR REPLACE TABLE FVHIS_DE.DISEASE_DIAGNOSIS.DIM_PATIENT
+    (Patient_ID varchar(10) NOT NULL,
+  Patient_name varchar(50) NULL,
+  Patient_gender varchar(6) NULL,
+  Patient_age int NULL,
+  Patient_bloodtype varchar(2) NULL,
+  Patient_weight_kg int NULL,
+  Patient_state_ID varchar(10) NOT NULL,
+    Patient_race varchar(50) DEFAULT 'UNKNOWN',
+    Patient_education varchar(50),
+    Patient_income int DEFAULT 20,
+    Patient_zip int NULL,
+    insert_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
+    
+CREATE OR REPLACE TABLE FVHIS_DE.DISEASE_DIAGNOSIS.FACT_DIAGNOSIS
+    (Medical_ID varchar(10) NULL,
+    Patient_ID varchar(10) NOT NULL,
+    Symptom_ID varchar(10) NULL,
+    Disease_ID varchar(10) DEFAULT 'UNKNOWN',
+    History_covid int NULL,
+    Blood_pressure_mmHG int NULL,
+    Blood_sugar_mgdL int NULL,
+    Doctor_Name varchar(50),
+    Appointment_date DATE NULL,
+    insert_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
+    
+    
+    
+---------------------------------------------------------------------
+    
+    
+-- Set up Table for DOCTOR
+CREATE DATABASE IF NOT EXISTS FVHIS_DOC;
+
+USE DATABASE FVHIS_DOC;
+
+CREATE SCHEMA IF NOT EXISTS DISEASE_DIAGNOSIS_UPTODATE;
+
+CREATE OR REPLACE TABLE FVHIS_DOC.DISEASE_DIAGNOSIS_UPTODATE.DISEASE
+    (Disease_ID varchar(10) NOT NULL,
+  Disease_name varchar(50) NULL,
+  Blood_pressure_mmHg varchar(10) NULL,
+  Blood_sugar_mgdL varchar(10) NULL
+    );
+    
+CREATE OR REPLACE TABLE FVHIS_DOC.DISEASE_DIAGNOSIS_UPTODATE.LOCATION
+    (State_ID  varchar(10) NOT NULL,
+  State_Name varchar(50) NOT NULL,
+  Climate varchar(100) NULL,
+  Aging_Population int DEFAULT 0,
+  Total_Population int NOT NULL);
+    
+CREATE OR REPLACE TABLE FVHIS_DOC.DISEASE_DIAGNOSIS_UPTODATE.DATE
+   (Date DATE,
+    Year SMALLINT,
+    Quarter SMALLINT,
+    Month SMALLINT,
+    Day SMALLINT);
+    
+CREATE OR REPLACE TABLE FVHIS_DOC.DISEASE_DIAGNOSIS_UPTODATE.MEDICAL
+    (Medical_ID varchar(10) NOT NULL,
+    Allergies_flag int NULL,
+    Surgery_Status_Flag int,
+    Work_Phone varchar(50),
+    Social_Security_Last_4 varchar(4),
+    Appointment_date DATE NULL);
   
-  
-CREATE OR REPLACE TABLE PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Medical(
-    Medical_iD varchar(10) NOT NULL,
-	Patient_iD varchar(10) NULL,
-	Appointment_date datetime NULL
-  );
-  
-  
-CREATE OR REPLACE TABLE PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_MedicalDetail(
-	Medical_iD varchar(10) NOT NULL,
-	Symptom_iD varchar(10) NULL,
-	Allergies_flag int NULL
-  );
-  
-  
-CREATE OR REPLACE TABLE PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Patient(
-	Patient_iD varchar(10) NOT NULL,
-	Insurance_iD varchar(10) NULL,
-	Patient_name varchar(50) NULL,
-	Patient_gender varchar(6) NULL,
-	Patient_age int NULL,
-	Patient_bloodtype varchar(2) NULL,
-	Patient_weight_kg int NULL,
-	History_covid int NULL,
-	Blood_pressure_mmHG int NULL,
-	Blood_sugar_mgdL int NULL,
-	Patient_zip int NULL,
-	Patient_state varchar(30) NULL
-  );
-  
+    
+CREATE OR REPLACE TABLE FVHIS_DOC.DISEASE_DIAGNOSIS_UPTODATE.SYMPTOM
+    (Symptom_ID varchar(10) NOT NULL,
+  Symptom_name varchar(50) NULL,
+  Symptom_stage int DEFAULT 0,
+    Symptom_Stage_Desc varchar(100) DEFAULT 'NONE'
+    );
+    
+CREATE OR REPLACE TABLE FVHIS_DOC.DISEASE_DIAGNOSIS_UPTODATE.PATIENT
+    (Patient_ID varchar(10) NOT NULL,
+  Patient_name varchar(50) NULL,
+  Patient_gender varchar(6) NULL,
+  Patient_age int NULL,
+  Patient_bloodtype varchar(2) NULL,
+  Patient_weight_kg int NULL,
+  Patient_state_ID varchar(10) NOT NULL,
+    Patient_race varchar(50) DEFAULT 'UNKNOWN',
+    Patient_education varchar(50),
+    Patient_income int DEFAULT 20,
+    Patient_zip int NULL);
+    
+CREATE OR REPLACE TABLE FVHIS_DOC.DISEASE_DIAGNOSIS_UPTODATE.DIAGNOSIS
+    (Medical_ID varchar(10) NULL,
+    Patient_ID varchar(10) NOT NULL,
+    Symptom_ID varchar(10) NULL,
+    Disease_ID varchar(10) DEFAULT 'UNKNOWN',
+    History_covid int NULL,
+    Blood_pressure_mmHG int NULL,
+    Blood_sugar_mgdL int NULL,
+    Doctor_Name varchar(50),
+    Appointment_date DATE NULL
+    );
 
-CREATE OR REPLACE TABLE PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Dim_Symptom(
-	Symptom_iD varchar(10) NOT NULL,
-	Disease_iD varchar(2) NULL,
-	Symptom_name varchar(50) NULL,
-	Symptom_stage int NULL
-  );
-  
-  
-CREATE OR REPLACE TABLE PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Fact_Diagnosis (
-   Medical_iD varchar(10) NULL,
-   Patient_iD varchar(10) NOT NULL,
-   Symptom_iD varchar(10) NULL,
-   Appointment_date datetime NULL,
-   Patient_age int NULL,
-   Patient_weight_kg int NULL,
-   Patient_bloodtype varchar(2) NULL,
-   History_covid int NULL,
-   Blood_pressure_mmHG int NULL,
-   Blood_sugar_mgdL int NULL
- );
+-----------------------------------------------------------------------
 
---Insert databsase into FACT DIAGNOSIS
---drop table "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS"."FACT_DIAGNOSIS" 
+-- Set up Task to Update newest data for Doctor
 
-INSERT INTO "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS"."FACT_DIAGNOSIS" (Medical_iD,
-   Patient_iD, Symptom_iD ,Appointment_date, Patient_age, Patient_weight_kg, Patient_bloodtype, History_covid,
-   Blood_pressure_mmHG, Blood_sugar_mgdL )
+USE DATABASE FVHIS_DE;
 
-select D.MEDICAL_ID, D.PATIENT_ID,DT. Symptom_iD, D.Appointment_date , P.Patient_age, P.Patient_weight_kg, P.Patient_bloodtype,
-P.History_covid, P.Blood_pressure_mmHG, P.Blood_sugar_mgdL
-from "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS"."DIM_MEDICAL" D
-JOIN "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS"."DIM_MEDICALDETAIL" DT on D.Medical_id = DT.Medical_iD
-JOIN "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS"."DIM_PATIENT" P on D.Patient_iD = P.Patient_iD
-;
--------------------------------------
---CREATE SNOWPIPE ENDPOINT"PIPELINE_GROUP02"
+CREATE OR REPLACE TASK UPDATE_DISEASE WAREHOUSE=QOOBEE_WH
+    SCHEDULE = '1 MINUTE'
+  --  ALLOW_OVERLAPPING_EXECUTION = TRUE
+    -- WHEN SYSTEM$STREAM_HAS_DATA('TEST')
+    AS
+    MERGE INTO "FVHIS_DOC"."DISEASE_DIAGNOSIS_UPTODATE"."DISEASE" AS DD
+    USING (SELECT * FROM  "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_DISEASE" T1
+           WHERE INSERT_TIME = (SELECT MAX(INSERT_TIME) FROM "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_DISEASE" WHERE T1.DISEASE_ID = "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_DISEASE".DISEASE_ID)) AS DD_SOURCE
+    ON DD.DISEASE_ID = DD_SOURCE.DISEASE_ID
+    WHEN MATCHED THEN
+        UPDATE SET DD.DISEASE_NAME = DD_SOURCE.DISEASE_NAME,
+                   DD.BLOOD_PRESSURE_MMHG = DD_SOURCE.BLOOD_PRESSURE_MMHG,
+                   DD.BLOOD_SUGAR_MGDL = DD_SOURCE.BLOOD_SUGAR_MGDL
+    WHEN NOT MATCHED THEN
+        INSERT ("DISEASE_ID" ,"DISEASE_NAME" ,"BLOOD_PRESSURE_MMHG" ,"BLOOD_SUGAR_MGDL") VALUES (DD_SOURCE.DISEASE_ID, DD_SOURCE.DISEASE_NAME, DD_SOURCE.BLOOD_PRESSURE_MMHG, DD_SOURCE.BLOOD_SUGAR_MGDL);
+ALTER TASK UPDATE_DISEASE RESUME;
 
---show stages in database "PIPELINE_GROUP02"
---show file formats in database "PIPELINE_GROUP02"
+--//-----------//-----------//----------//----------//----------
 
-alter user HANK0720 set rsa_public_key = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxP20oUpVwtPYPuGnsyou
-ySuD685+YMOUEQI583TSom5f4GBikCRGmrrF6oFMQjj74iYNULxGe2pYCnDOzPnF
-VAZSt5uq+Mg70yopks+GSzVIkaXSYJIk0A2zC3VrTF6iS3ze8pwsF2sfludgI0um
-kwcY+iTgnkNj000rm3LswMoN3Y/7/aUniDmB3OYHdUZkSi4/pIlrwhgBgxU1qwA/
-uEYNJ27RB0J7VrIGVDuxjY/NDtkrEepuQqtv/o7zhtr4SnLC4EBGg9QhkehHRcJN
-0rAkPzWFok9Q3JAGpG0JTuD3LBV08X5+CLGXQlSwiA+0/tqekuvRZZ9i/YpIAtJZ
-mQIDAQAB'
+CREATE OR REPLACE TASK UPDATE_LOCATION WAREHOUSE=QOOBEE_WH
+    SCHEDULE = '1 MINUTE'
+  --  ALLOW_OVERLAPPING_EXECUTION = TRUE
+    -- WHEN SYSTEM$STREAM_HAS_DATA('TEST')
+    AS
+    MERGE INTO "FVHIS_DOC"."DISEASE_DIAGNOSIS_UPTODATE"."LOCATION" AS DL
+    USING (SELECT * FROM  "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_LOCATION" T2
+           WHERE INSERT_TIME = (SELECT MAX(INSERT_TIME) FROM "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_LOCATION" WHERE T2.STATE_ID = "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_LOCATION".STATE_ID)) AS DL_SOURCE
+    ON DL.STATE_ID = DL_SOURCE.STATE_ID
+    WHEN MATCHED THEN
+        UPDATE SET DL.STATE_NAME = DL_SOURCE.STATE_NAME,
+                   DL.CLIMATE = DL_SOURCE.CLIMATE,
+                   DL.AGING_POPULATION = DL_SOURCE.AGING_POPULATION,
+                   DL.TOTAL_POPULATION = DL_SOURCE.TOTAL_POPULATION
+    WHEN NOT MATCHED THEN
+        INSERT ("STATE_ID" ,"STATE_NAME" ,"CLIMATE" ,"AGING_POPULATION", "TOTAL_POPULATION") VALUES (DL_SOURCE.STATE_ID, DL_SOURCE.STATE_NAME, DL_SOURCE.CLIMATE, DL_SOURCE.AGING_POPULATION, DL_SOURCE.TOTAL_POPULATION);
+ALTER TASK UPDATE_LOCATION RESUME;
 
+--//-----------//-----------//----------//----------//----------
 
-CREATE or REPLACE table PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Disease_Stagging
-( Disease_ID string, Disease_Name string,Blood_Pressure_mmHg string ,Blood_Sugar_mgdL string );
-
-
-CREATE STAGE "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS".SNOWPIPE;
-
-create pipe "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS".mypipe
-if not exists as copy into "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS".Disease_Stagging from @"PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS".SNOWPIPE 
-file_format = CSV;
-
---drop STAGE "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS".SNOWPIPE;
---desc user HANK0720
---drop pipe "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS".mypipe
-
-LIST @SNOWPIPE
-SELECT * FROM  "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS".Disease_Stagging
-
-select SYSTEM$PIPE_STATUS('"PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS".mypipe')
-
-------------------------------TASK SCHEDULE
---set up context 
-use role sysadmin;
-use database "PIPELINE_GROUP02";
-use schema "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS";
-use warehouse compute_wh;
+CREATE OR REPLACE TASK UPDATE_MEDICAL WAREHOUSE=QOOBEE_WH
+    SCHEDULE = '1 MINUTE'
+  --  ALLOW_OVERLAPPING_EXECUTION = TRUE
+    -- WHEN SYSTEM$STREAM_HAS_DATA('TEST')
+    AS
+    MERGE INTO "FVHIS_DOC"."DISEASE_DIAGNOSIS_UPTODATE"."MEDICAL" AS DM
+    USING (SELECT * FROM  "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_MEDICAL" T3
+           WHERE INSERT_TIME = (SELECT MAX(INSERT_TIME) FROM "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_MEDICAL" WHERE T3.MEDICAL_ID = "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_MEDICAL".MEDICAL_ID)) AS DM_SOURCE
+    ON DM.MEDICAL_ID = DM_SOURCE.MEDICAL_ID
+    WHEN MATCHED THEN
+        UPDATE SET DM.ALLERGIES_FLAG = DM_SOURCE.ALLERGIES_FLAG,
+                   DM.SURGERY_STATUS_FLAG = DM_SOURCE.SURGERY_STATUS_FLAG,
+                   DM.WORK_PHONE = DM_SOURCE.WORK_PHONE,
+                   DM."SOCIAL_SECURITY_LAST_4" = DM_SOURCE."SOCIAL_SECURITY_LAST_4",
+                   DM.APPOINTMENT_DATE = DM_SOURCE.APPOINTMENT_DATE
+    WHEN NOT MATCHED THEN
+        INSERT ("MEDICAL_ID" ,"ALLERGIES_FLAG", "SURGERY_STATUS_FLAG", "WORK_PHONE", "SOCIAL_SECURITY_LAST_4","APPOINTMENT_DATE") VALUES (DM_SOURCE.MEDICAL_ID, DM_SOURCE.ALLERGIES_FLAG, DM_SOURCE.SURGERY_STATUS_FLAG, DM_SOURCE.WORK_PHONE , 
+                                                                                                                                         DM_SOURCE."SOCIAL_SECURITY_LAST_4", DM_SOURCE.APPOINTMENT_DATE);
+ALTER TASK UPDATE_MEDICAL RESUME;
 
 
---GRANT TASK exucute to Account 
-create role taskadmin;
+--//-----------//-----------//----------//----------//----------
 
---set the active role to ACCOUNTADMIN before granting the EXECUTE TASK privilege to the new role
-use role accountadmin;
+CREATE OR REPLACE TASK UPDATE_DATE WAREHOUSE=QOOBEE_WH
+    SCHEDULE = '1 MINUTE'
+  --  ALLOW_OVERLAPPING_EXECUTION = TRUE
+    -- WHEN SYSTEM$STREAM_HAS_DATA('TEST')
+    AS
+    MERGE INTO "FVHIS_DOC"."DISEASE_DIAGNOSIS_UPTODATE"."DATE" AS DDATE
+    USING (SELECT * FROM  "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_DATE" T1
+           WHERE INSERT_TIME = (SELECT MAX(INSERT_TIME) FROM "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_DATE" WHERE T1.DATE = "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_DATE".DATE)) AS DDATE_SOURCE
+    ON DDATE.DATE = DDATE_SOURCE.DATE
+    WHEN NOT MATCHED THEN
+        INSERT ("DATE" ,"YEAR" ,"QUARTER" ,"MONTH", "DAY") VALUES (DDATE_SOURCE.DATE, DDATE_SOURCE.YEAR, DDATE_SOURCE.QUARTER, DDATE_SOURCE.MONTH, DDATE_SOURCE.DAY);
+ALTER TASK UPDATE_DATE RESUME;
 
-grant execute task on account to role taskadmin;
-
---set the active role to SECURITYADMIN to show that this role can grant a role to another role
-use role securityadmin;
-
-grant role taskadmin to role sysadmin;
-
-//CDC ON STAGGING TALBE
-// Append_only for insert statement
-create stream disease_Stage on table "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS"."DISEASE_STAGGING"
-append_only = true ;
-
-create or replace task disease_merge
-    warehouse = COMPUTE_WH
-    schedule = '1 minutes'
-    when system$stream_has_data('disease_Stage')
-as
-     merge into "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS"."DIM_DISEASE" pd
-     using "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS"."DISEASE_STAGGING" stg
-  on pd.DISEASE_ID = stg.DISEASE_ID
-  when matched then
-  update set pd.BLOOD_SUGAR_MGDL = stg.BLOOD_SUGAR_MGDL
-  when not matched then
-  insert (DISEASE_ID, DISEASE_NAME,BLOOD_PRESSURE_MMHG,BLOOD_SUGAR_MGDL)
-   values (stg.DISEASE_ID, stg.DISEASE_NAME,stg.BLOOD_PRESSURE_MMHG,stg.BLOOD_SUGAR_MGDL);
-
-alter task disease_merge suspend;
-
---Test Enviroment SQL 
---INSERT INTO PIPELINE_GROUP02.DATAWAREHOUSE_DIAGNOSIS.Disease_Stagging
---VALUES ('D5','HIV','<120','>160')
-
---delete from "PIPELINE_GROUP02"."DATAWAREHOUSE_DIAGNOSIS"."DISEASE_STAGGING" where DISEASE_ID = 'D5'
+--//-----------//-----------//----------//----------//----------
 
 
-select *
-  from table(information_schema.task_history())
-  order by scheduled_time;
+CREATE OR REPLACE TASK UPDATE_SYMPTOM WAREHOUSE=QOOBEE_WH
+    SCHEDULE = '1 MINUTE'
+  --  ALLOW_OVERLAPPING_EXECUTION = TRUE
+    -- WHEN SYSTEM$STREAM_HAS_DATA('TEST')
+    AS
+    MERGE INTO "FVHIS_DOC"."DISEASE_DIAGNOSIS_UPTODATE"."SYMPTOM" AS DS
+    USING (SELECT * FROM  "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_SYMPTOM" T5
+           WHERE INSERT_TIME = (SELECT MAX(INSERT_TIME) FROM "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_SYMPTOM" WHERE T5.SYMPTOM_ID = "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_SYMPTOM".SYMPTOM_ID)) AS DS_SOURCE
+    ON DS.SYMPTOM_ID = DS_SOURCE.SYMPTOM_ID
+    WHEN MATCHED THEN
+        UPDATE SET DS.SYMPTOM_NAME = DS_SOURCE.SYMPTOM_NAME,
+                   DS.SYMPTOM_STAGE = DS_SOURCE.SYMPTOM_STAGE,
+                   DS.SYMPTOM_STAGE_DESC = DS_SOURCE.SYMPTOM_STAGE_DESC
+    WHEN NOT MATCHED THEN
+        INSERT ("SYMPTOM_ID" ,"SYMPTOM_NAME" ,"SYMPTOM_STAGE", "SYMPTOM_STAGE_DESC") VALUES (DS_SOURCE.SYMPTOM_ID, DS_SOURCE.SYMPTOM_NAME, DS_SOURCE.SYMPTOM_STAGE,   DS_SOURCE.SYMPTOM_STAGE_DESC);
+
+ALTER TASK UPDATE_SYMPTOM RESUME;
+
+--//-----------//-----------//----------//----------//----------
+
+CREATE OR REPLACE TASK UPDATE_PATIENT WAREHOUSE=QOOBEE_WH
+    SCHEDULE = '1 MINUTE'
+  --  ALLOW_OVERLAPPING_EXECUTION = TRUE
+    -- WHEN SYSTEM$STREAM_HAS_DATA('TEST')
+    AS
+    MERGE INTO "FVHIS_DOC"."DISEASE_DIAGNOSIS_UPTODATE"."PATIENT" AS DP
+    USING (SELECT * FROM  "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_PATIENT" T6
+           WHERE INSERT_TIME = (SELECT MAX(INSERT_TIME) FROM "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_PATIENT" WHERE T6.PATIENT_ID = "FVHIS_DE"."DISEASE_DIAGNOSIS"."DIM_PATIENT".PATIENT_ID)) AS DP_SOURCE
+    ON DP.PATIENT_ID = DP_SOURCE.PATIENT_ID
+    WHEN MATCHED THEN
+        UPDATE SET DP.PATIENT_NAME = DP_SOURCE.PATIENT_NAME,
+                   DP.PATIENT_GENDER = DP_SOURCE.PATIENT_GENDER,
+                   DP.PATIENT_AGE = DP_SOURCE.PATIENT_AGE,
+                   DP.PATIENT_BLOODTYPE = DP_SOURCE.PATIENT_BLOODTYPE,
+                   DP.PATIENT_WEIGHT_KG = DP_SOURCE.PATIENT_WEIGHT_KG,
+                   DP.PATIENT_STATE_ID = DP_SOURCE.PATIENT_STATE_ID,
+                   DP.PATIENT_RACE = DP_SOURCE.PATIENT_RACE,
+                   DP.PATIENT_EDUCATION = DP_SOURCE.PATIENT_EDUCATION,
+                   DP.PATIENT_INCOME = DP_SOURCE.PATIENT_INCOME,
+                   DP.PATIENT_ZIP = DP_SOURCE.PATIENT_ZIP
+    WHEN NOT MATCHED THEN
+        INSERT ("PATIENT_ID" ,"PATIENT_NAME", "PATIENT_GENDER", "PATIENT_AGE", "PATIENT_BLOODTYPE", "PATIENT_WEIGHT_KG", "PATIENT_STATE_ID", "PATIENT_RACE", "PATIENT_EDUCATION", "PATIENT_INCOME", "PATIENT_ZIP" ) 
+        VALUES (DP_SOURCE.PATIENT_ID, DP_SOURCE.PATIENT_NAME,   DP_SOURCE.PATIENT_GENDER,  DP_SOURCE.PATIENT_AGE,   DP_SOURCE.PATIENT_BLOODTYPE,   
+                DP_SOURCE.PATIENT_WEIGHT_KG,   DP_SOURCE.PATIENT_STATE_ID,   DP_SOURCE.PATIENT_RACE,   DP_SOURCE.PATIENT_EDUCATION, DP_SOURCE.PATIENT_INCOME,   DP_SOURCE.PATIENT_ZIP);
+
+ALTER TASK UPDATE_PATIENT RESUME;
+
+--//-----------//-----------//----------//----------//----------
+
+CREATE OR REPLACE TASK UPDATE_DIAGNOSIS WAREHOUSE=QOOBEE_WH
+    SCHEDULE = '1 MINUTE'
+  --  ALLOW_OVERLAPPING_EXECUTION = TRUE
+    -- WHEN SYSTEM$STREAM_HAS_DATA('TEST')
+    AS
+    MERGE INTO "FVHIS_DOC"."DISEASE_DIAGNOSIS_UPTODATE"."DIAGNOSIS" AS FD
+    USING (SELECT * FROM  "FVHIS_DE"."DISEASE_DIAGNOSIS"."FACT_DIAGNOSIS" T6
+           WHERE INSERT_TIME = (SELECT MAX(INSERT_TIME) FROM "FVHIS_DE"."DISEASE_DIAGNOSIS"."FACT_DIAGNOSIS" WHERE T6.MEDICAL_ID = "FVHIS_DE"."DISEASE_DIAGNOSIS"."FACT_DIAGNOSIS".MEDICAL_ID)) AS FD_SOURCE
+    ON FD.MEDICAL_ID = FD_SOURCE.MEDICAL_ID
+    WHEN MATCHED THEN
+        UPDATE SET FD.PATIENT_ID = FD_SOURCE.PATIENT_ID,
+                   FD.SYMPTOM_ID = FD_SOURCE.SYMPTOM_ID,
+                   FD.DISEASE_ID = FD_SOURCE.DISEASE_ID,
+                   FD.HISTORY_COVID = FD_SOURCE.HISTORY_COVID,
+                   FD.BLOOD_PRESSURE_MMHG = FD_SOURCE.BLOOD_PRESSURE_MMHG,
+                   FD.BLOOD_SUGAR_MGDL = FD_SOURCE.BLOOD_SUGAR_MGDL,
+                   FD.DOCTOR_NAME = FD_SOURCE.DOCTOR_NAME,
+                   FD.APPOINTMENT_DATE = FD_SOURCE.APPOINTMENT_DATE
+    WHEN NOT MATCHED THEN
+        INSERT ("MEDICAL_ID" ,"PATIENT_ID", "SYMPTOM_ID", "DISEASE_ID", "HISTORY_COVID", "BLOOD_PRESSURE_MMHG", "BLOOD_SUGAR_MGDL", "DOCTOR_NAME", "APPOINTMENT_DATE") 
+        VALUES (FD_SOURCE.MEDICAL_ID, FD_SOURCE.PATIENT_ID,   FD_SOURCE.SYMPTOM_ID,  FD_SOURCE.DISEASE_ID,   FD_SOURCE.HISTORY_COVID,   
+                FD_SOURCE.BLOOD_PRESSURE_MMHG,   FD_SOURCE.BLOOD_SUGAR_MGDL,   FD_SOURCE.DOCTOR_NAME,   FD_SOURCE.APPOINTMENT_DATE);
+
+ALTER TASK UPDATE_DIAGNOSIS RESUME;
+
+
+
+
