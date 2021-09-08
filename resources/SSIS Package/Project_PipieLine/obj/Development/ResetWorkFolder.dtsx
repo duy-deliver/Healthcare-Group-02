@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/8/2021 10:40:53 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CVP00205017A"
+  DTS:CreatorName="FSOFT.FPT.VN\HungND74"
+  DTS:DTSID="{57DA0159-A8D5-4585-B6E8-E5FD9902F950}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{04470568-2D6C-494D-B426-4A4B0E8E42EA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B288066E-A0F0-461C-8A52-8A4B8F5CE507}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::WorkFolderPath] + &quot;Data\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DataFolder_RelativePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\HungND74\Downloads\Healthcare-Group-02-dev\Healthcare-Group-02-dev\resources\work-folder\Data\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C4121C7E-7A36-4E94-937C-C4BE3471C5AE}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ProjectAbsolutePath]  + &quot;resources\\raw-folder\\Template\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TemplateFolder_RelativePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\HungND74\Downloads\Healthcare-Group-02-dev\Healthcare-Group-02-dev\resources\raw-folder\Template\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ACCA4294-DD11-4460-B7C3-E78FCAE35F07}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{36AE94E8-1696-4AED-A6BF-5AF3DBF70C51}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::DataFolder_RelativePath] +  @[User::varFileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\HungND74\Downloads\Healthcare-Group-02-dev\Healthcare-Group-02-dev\resources\work-folder\Data\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C6CAFCF9-752D-424B-BFCD-0FC0052B16FF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileTemplateName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{093F2968-2C43-48F4-812D-CFB6DCF42190}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::TemplateFolder_RelativePath] +  @[User::varFileTemplateName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileTemplatePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\HungND74\Downloads\Healthcare-Group-02-dev\Healthcare-Group-02-dev\resources\raw-folder\Template\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4A1F27B7-EE55-4FD0-BF8C-90719E3B456C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ProjectAbsolutePath]+&quot;resources\\work-folder\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="WorkFolderPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\HungND74\Downloads\Healthcare-Group-02-dev\Healthcare-Group-02-dev\resources\work-folder\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Add placeholder files"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{8373E6F6-4310-4F69-B646-F44C14031BFE}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Add placeholder files">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{F6D0B611-A542-4A49-A8E4-1B9BE66EDF9E}"
+        DTS:ObjectName="{F6D0B611-A542-4A49-A8E4-1B9BE66EDF9E}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::TemplateFolder_RelativePath]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\HungND74\Downloads\Healthcare-Group-02-dev\Healthcare-Group-02-dev\resources\raw-folder\Template\" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Add placeholder files\Append Template files to Work folder"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{f5653575-c2e6-4d87-8183-85f38ee9ebdc}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Append Template files to Work folder"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskSourcePath="User::varFileTemplatePath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::DataFolder_RelativePath"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{B3C47B44-681B-4ACC-AAE3-E3AEA3FD1CCE}"
+          DTS:ObjectName="{B3C47B44-681B-4ACC-AAE3-E3AEA3FD1CCE}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::varFileTemplateName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Remove Data from Work Folder"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{c45b0dd3-f0c2-4187-a390-8bb73ccb8b0e}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Remove Data from Work Folder">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{914269ff-1fc8-45ec-bfbb-b2aadfcc735c}"
+        DTS:ObjectName="{CF232A50-2E11-43FB-A63B-FC01D17BFC30}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::DataFolder_RelativePath]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\HungND74\Downloads\Healthcare-Group-02-dev\Healthcare-Group-02-dev\resources\work-folder\Data\" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Remove Data from Work Folder\Delete Files from Working"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{200c9e18-d9e5-4a7b-87db-f7396319a503}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Files from Working"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="DeleteFile"
+              TaskSourcePath="User::varFilePath"
+              TaskIsSourceVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{2A99E8E2-11B0-45FF-9739-209F34D6C81A}"
+          DTS:ObjectName="{2A99E8E2-11B0-45FF-9739-209F34D6C81A}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::varFileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D3AD16EE-5996-4300-A8C2-EAFAC78966DF}"
+      DTS:From="Package\Remove Data from Work Folder"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Add placeholder files" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Remove Data from Work Folder\Delete Files from Working"
+          TopLeft="27,30" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="301,128"
+          Size="301,171"
+          Id="Package\Remove Data from Work Folder"
+          TopLeft="60,189" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\Add placeholder files\Append Template files to Work folder"
+          TopLeft="11,25" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="282,119"
+          Size="282,162"
+          Id="Package\Add placeholder files"
+          TopLeft="441,196" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="361,275.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80,0"
+              Start="0,0"
+              End="72.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="72.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

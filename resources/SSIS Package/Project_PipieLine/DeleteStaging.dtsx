@@ -1,0 +1,60 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/7/2021 11:03:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CVP00205017A"
+  DTS:CreatorName="FSOFT.FPT.VN\HungND74"
+  DTS:DTSID="{7F924041-0E0B-4287-B2AC-A6CDEE722421}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{25A77DEB-861A-419F-A55C-9EA03E1DC950}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DELETE FROM Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7c58f71d-a8e3-4ae3-bb61-b2a5df3442f4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DELETE FROM Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{591C4897-EC15-48B4-B60A-F9579D09A9C1}"
+          SQLTask:SqlStatementSource="IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Medical]') and TYPE = ( N'U'))&#xA;DELETE FROM Medical&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Patient]') and TYPE = ( N'U'))&#xA;DELETE FROM Patient&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Location]') and TYPE = ( N'U'))&#xA;DELETE FROM Location&#xA;GO&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Symptom]') and TYPE = ( N'U'))&#xA;DELETE FROM Symptom;&#xA;GO&#xA;&#xA;&#xA;IF EXISTS ( SELECT 1 FROM sysobjects with ( nolock ) WHERE ID = OBJECT_ID(N'[Disease]') and TYPE = ( N'U'))&#xA;DELETE FROM Disease&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\DELETE FROM Tables"
+          TopLeft="117,132" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
