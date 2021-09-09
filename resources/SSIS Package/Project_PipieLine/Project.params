@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\HungND74\Downloads\Healthcare-Group-02-main\Healthcare-Group-02-main\</SSIS:Property>
+        SSIS:Name="Value">C:\Users\HungND74\Downloads\Healthcare-Group-02-dev\Healthcare-Group-02-dev\</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -33,7 +33,7 @@
       <SSIS:Property
         SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
+        SSIS:Name="Required">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
@@ -43,10 +43,31 @@
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="SourceServer">
+    SSIS:Name="ServerName">
     <SSIS:Properties>
       <SSIS:Property
         SSIS:Name="ID">{27aa5245-ddb4-45cb-8e9c-eb69218c8753}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">1</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">CVP00205017A</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="MainPath">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{0b4ac329-7d8f-4c01-95cc-70bc65dc790e}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property

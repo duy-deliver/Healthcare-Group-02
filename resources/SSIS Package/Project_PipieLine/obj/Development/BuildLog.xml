@@ -2,23 +2,28 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Project_PipieLine</Name>
-    <LastWriteTime>2021-09-04T17:51:34.4826812Z</LastWriteTime>
+    <LastWriteTime>2021-09-08T08:52:14.773776Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>SnowflakeLoading.dtsx</Name>
-      <LastWriteTime>2021-08-28T15:54:46.7739733Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
       <Name>DataProfiling.dtsx</Name>
-      <LastWriteTime>2021-08-24T04:22:13.3160416Z</LastWriteTime>
+      <LastWriteTime>2021-09-07T14:14:14.4633967Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Staging.dtsx</Name>
-      <LastWriteTime>2021-09-04T18:03:02.9245475Z</LastWriteTime>
+      <LastWriteTime>2021-09-08T10:01:59.8952122Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DeleteStaging.dtsx</Name>
+      <LastWriteTime>2021-09-08T08:54:49.6304138Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>ResetWorkFolder.dtsx</Name>
+      <LastWriteTime>2021-09-08T04:03:54.7711105Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

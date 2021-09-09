@@ -20,3 +20,11 @@ Building the data pipeline
 1. Login into MSSQL and run [init_mssql.sql](./src/mssql/init_mssql.sql)
 2. Authen SnowSQL and run [init_snowflake.sql](./src/mssql/init_snowfalke.sql)
 3. Generate data: `python data-generator.py`
+
+
+# Setup for Dev
+in SQL SERVER Management Studio, follow [this tutorial](https://docs.microsoft.com/en-us/sql/integration-services/catalog/ssis-catalog?view=sql-server-ver15#to-create-the-ssisdb-catalog-in-sql-server-management-studio) to create a SSIS Catalog
+
+SSIS Catalog:
+- SSISDB
+- Password: Pipeline1234
