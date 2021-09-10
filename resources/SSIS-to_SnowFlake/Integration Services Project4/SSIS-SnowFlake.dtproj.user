@@ -8,9 +8,8 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
-        <ServerName>CVP00204899A</ServerName>
-        <PathOnServer>/SSISDB/LoadDataToSnowFlake_v2.2/SSISPackage</PathOnServer>
-        <Run64BitRuntime>false</Run64BitRuntime>
+        <ServerName>CVP00204899A\MSSQL2019</ServerName>
+        <PathOnServer>/SSISDB/LoadDataToSnowFlake_v3.1(64bit)/SSIS-SnowFlake</PathOnServer>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
